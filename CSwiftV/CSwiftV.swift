@@ -20,7 +20,7 @@ public class CSwiftV {
     
     public let columnCount: Int = 0
     public let headers : [String] = []
-    public let rows: [ [String:String] ] = []
+    public let keyedRows: [ [String:String] ] = []
     public let hasHeaders: Bool = 0
     
     public init(String string: String, header:Bool) {
@@ -34,7 +34,7 @@ public class CSwiftV {
             self.columnCount = columnCountFromLine(lines[0])
             self.hasHeaders = header;
             self.headers = parseHeaders(Line: lines[0])
-            self.rows = self.parseRows(Lines : lines)
+            self.keyedRows = self.parseRows(Lines : lines)
         }
     }
 //TODO: Document that this assumes header string

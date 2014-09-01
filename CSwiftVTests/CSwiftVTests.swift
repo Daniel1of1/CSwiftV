@@ -20,10 +20,10 @@ class CSwiftVTests: XCTestCase {
     }
     
     func testThatItParsesLinesSeperatedByNewLines() {
-        let testCSVURL = NSBundle(forClass:CSwiftVTests.self).URLForResource("newLineSeparation", withExtension: "csv")
-        testString = NSString.stringWithContentsOfURL(testCSVURL, encoding:NSUTF8StringEncoding, error:nil)
+        let testCSVURL = NSBundle(forClass:CSwiftVTests.self).URLForResource("newLineSeparation", withExtension: "csv")!
+        testString = NSString.stringWithContentsOfURL(testCSVURL, encoding:NSUTF8StringEncoding, error:nil)!
 
-        let arrayUnderTest =  CSwiftV(String: testString).rows
+        let arrayUnderTest =  CSwiftV(String: testString).keyedRows
         
         let expectedArray = [
             ["Year":"1997","Make":"Ford","Model":"E350","Description":"descrition","Price":"3000.00"],
@@ -35,10 +35,10 @@ class CSwiftVTests: XCTestCase {
     }
     
     func testThatItParsesLinesSeperatedByNewLinesWithoutNewLineAtEnd() {
-        let testCSVURL = NSBundle(forClass:CSwiftVTests.self).URLForResource("newLineSeparationNoEnd", withExtension: "csv")
-        testString = NSString.stringWithContentsOfURL(testCSVURL, encoding:NSUTF8StringEncoding, error:nil)
+        let testCSVURL = NSBundle(forClass:CSwiftVTests.self).URLForResource("newLineSeparationNoEnd", withExtension: "csv")!
+        testString = NSString.stringWithContentsOfURL(testCSVURL, encoding:NSUTF8StringEncoding, error:nil)!
         
-        let arrayUnderTest =  CSwiftV(String: testString).rows
+        let arrayUnderTest =  CSwiftV(String: testString).keyedRows
         
         let expectedArray = [
             ["Year":"1997","Make":"Ford","Model":"E350","Description":"descrition","Price":"3000.00"],
@@ -51,9 +51,9 @@ class CSwiftVTests: XCTestCase {
     
     func testThatItParsesHeadersCorrectly() {
         
-        let testCSVURL = NSBundle(forClass:CSwiftVTests.self).URLForResource("newLineSeparationNoEnd", withExtension: "csv")
+        let testCSVURL = NSBundle(forClass:CSwiftVTests.self).URLForResource("newLineSeparationNoEnd", withExtension: "csv")!
         
-        testString = NSString.stringWithContentsOfURL(testCSVURL, encoding:NSUTF8StringEncoding, error:nil)
+        testString = NSString.stringWithContentsOfURL(testCSVURL, encoding:NSUTF8StringEncoding, error:nil)!
         
         let arrayUnderTest : [String] =  CSwiftV(String: testString, header:true).headers
         
@@ -65,11 +65,11 @@ class CSwiftVTests: XCTestCase {
     
     func testThatItParsesRowsWithoutHeaders() {
         
-        let testCSVURL = NSBundle(forClass:CSwiftVTests.self).URLForResource("withoutHeader", withExtension: "csv")
+        let testCSVURL = NSBundle(forClass:CSwiftVTests.self).URLForResource("withoutHeader", withExtension: "csv")!
         
-        testString = NSString.stringWithContentsOfURL(testCSVURL, encoding:NSUTF8StringEncoding, error:nil)
+        testString = NSString.stringWithContentsOfURL(testCSVURL, encoding:NSUTF8StringEncoding, error:nil)!
         
-        let arrayUnderTest = CSwiftV(String: testString, header:false).rows
+        let arrayUnderTest = CSwiftV(String: testString, header:false).keyedRows
         
         //XCTAssertNil(arrayUnderTest)
         
@@ -84,11 +84,11 @@ class CSwiftVTests: XCTestCase {
     
     func testThatItParsesFieldswithQuotes() {
         
-        let testCSVURL = NSBundle(forClass:CSwiftVTests.self).URLForResource("withRandomQuotes", withExtension: "csv")
+        let testCSVURL = NSBundle(forClass:CSwiftVTests.self).URLForResource("withRandomQuotes", withExtension: "csv")!
         
-        testString = NSString.stringWithContentsOfURL(testCSVURL, encoding:NSUTF8StringEncoding, error:nil)
+        testString = NSString.stringWithContentsOfURL(testCSVURL, encoding:NSUTF8StringEncoding, error:nil)!
         
-        let arrayUnderTest =  CSwiftV(String: testString).rows
+        let arrayUnderTest =  CSwiftV(String: testString).keyedRows
         
         let expectedArray = [
             ["Year":"1997","Make":"Ford","Model":"E350","Description":"descrition","Price":"3000.00"],
@@ -101,9 +101,9 @@ class CSwiftVTests: XCTestCase {
     
     func testThatItParsesFieldswithCommasInQuotes() {
         
-        let testCSVURL = NSBundle(forClass:CSwiftVTests.self).URLForResource("withCommasInQuotes", withExtension: "csv")
+        let testCSVURL = NSBundle(forClass:CSwiftVTests.self).URLForResource("withCommasInQuotes", withExtension: "csv")!
         
-        testString = NSString.stringWithContentsOfURL(testCSVURL, encoding:NSUTF8StringEncoding, error:nil)
+        testString = NSString.stringWithContentsOfURL(testCSVURL, encoding:NSUTF8StringEncoding, error:nil)!
         
         let arrayUnderTest =  CSwiftV(String: testString).rows
         
@@ -118,15 +118,15 @@ class CSwiftVTests: XCTestCase {
 
     func testThatItParsesFieldswithQuotesInQuotes() {
         
-        let testCSVURL = NSBundle(forClass:CSwiftVTests.self).URLForResource("withQuotesInQuotes", withExtension: "csv")
+        let testCSVURL = NSBundle(forClass:CSwiftVTests.self).URLForResource("withQuotesInQuotes", withExtension: "csv")!
         
-        testString = NSString.stringWithContentsOfURL(testCSVURL, encoding:NSUTF8StringEncoding, error:nil)
+        testString = NSString.stringWithContentsOfURL(testCSVURL, encoding:NSUTF8StringEncoding, error:nil)!
         
-        let arrayUnderTest =  CSwiftV(String: testString).rows
+        let arrayUnderTest =  CSwiftV(String: testString).keyedRows as NSArray
         
         let expectedArray = [
             ["Year":"1997","Make":"Ford","Model":"E350","Description":"descrition","Price":"3000.00"],
-            ["Year":"1999","Make":"Chevy","Model":"Venture","Description":"another, \"amazing\", description","Price":"4900.00"]
+            ["Year":"1999","Make":"Chevy","Model":"Venture","Description":"another, \"amazing\", description","Price":"4900.00"] as NSDictionary
         ]
         
         XCTAssertEqual(arrayUnderTest.bridgeToObjectiveC(), expectedArray.bridgeToObjectiveC())
@@ -135,11 +135,11 @@ class CSwiftVTests: XCTestCase {
     
     func testThatItParsesFieldswithNewLinesInQuotes() {
         
-        let testCSVURL = NSBundle(forClass:CSwiftVTests.self).URLForResource("withNewLinesInQuotes", withExtension: "csv")
+        let testCSVURL = NSBundle(forClass:CSwiftVTests.self).URLForResource("withNewLinesInQuotes", withExtension: "csv")!
         
-        testString = NSString.stringWithContentsOfURL(testCSVURL, encoding:NSUTF8StringEncoding, error:nil)
+        testString = NSString.stringWithContentsOfURL(testCSVURL, encoding:NSUTF8StringEncoding, error:nil)!
         println("\(testString!)")
-        let arrayUnderTest =  CSwiftV(String: testString).rows
+        let arrayUnderTest =  CSwiftV(String: testString).keyedRows
         
         let expectedArray = [
             ["Year":"1997","Make":"Ford","Model":"E350","Description":"descrition","Price":"3000.00"],
