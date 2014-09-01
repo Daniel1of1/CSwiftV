@@ -30,7 +30,7 @@ class CSwiftVTests: XCTestCase {
             ["Year":"1999","Make":"Chevy","Model":"Venture","Description":"another description","Price":"4900.00"]
         ]
         
-        XCTAssertEqual(arrayUnderTest as NSArray, expectedArray as NSArray)
+        XCTAssertEqual(arrayUnderTest, expectedArray)
 
     }
     
@@ -45,7 +45,7 @@ class CSwiftVTests: XCTestCase {
             ["Year":"1999","Make":"Chevy","Model":"Venture","Description":"another description","Price":"4900.00"]
         ]
         
-        XCTAssertEqual(arrayUnderTest as NSArray, expectedArray as NSArray)
+        XCTAssertEqual(arrayUnderTest, expectedArray)
         
     }
     
@@ -59,7 +59,7 @@ class CSwiftVTests: XCTestCase {
         
         let expectedArray = ["Year","Make","Model","Description","Price"]
         
-        XCTAssertEqual(arrayUnderTest as NSArray, expectedArray as NSArray)
+        XCTAssertEqual(arrayUnderTest, expectedArray)
         
     }
     
@@ -78,7 +78,7 @@ class CSwiftVTests: XCTestCase {
             ["column1":"1999","column2":"Chevy","column3":"Venture","column4":"another description","column5":"4900.00"]
         ]
         
-        XCTAssertEqual(arrayUnderTest as NSArray, expectedArray as NSArray)
+        XCTAssertEqual(arrayUnderTest, expectedArray)
         
     }
     
@@ -95,7 +95,7 @@ class CSwiftVTests: XCTestCase {
             ["Year":"1999","Make":"Chevy","Model":"Venture","Description":"another description","Price":"4900.00"]
         ]
         
-        XCTAssertEqual(arrayUnderTest as NSArray, expectedArray as NSArray)
+        XCTAssertEqual(arrayUnderTest, expectedArray)
         
     }
     
@@ -112,7 +112,7 @@ class CSwiftVTests: XCTestCase {
             ["Year":"1999","Make":"Chevy","Model":"Venture","Description":"another, amazing, description","Price":"4900.00"]
         ]
         
-        XCTAssertEqual(arrayUnderTest as NSArray, expectedArray as NSArray)
+        XCTAssertEqual(arrayUnderTest, expectedArray)
         
     }
 
@@ -129,7 +129,7 @@ class CSwiftVTests: XCTestCase {
             ["Year":"1999","Make":"Chevy","Model":"Venture","Description":"another, \"amazing\", description","Price":"4900.00"] as NSDictionary
         ]
         
-        XCTAssertEqual(arrayUnderTest as NSArray, expectedArray as NSArray)
+        XCTAssertEqual(arrayUnderTest, expectedArray)
         
     }
     
@@ -146,7 +146,7 @@ class CSwiftVTests: XCTestCase {
             ["Year":"1999","Make":"Chevy","Model":"Venture","Description":"another, \"amazing\",\ndescription\n","Price":"4900.00"]
         ]
         
-        XCTAssertEqual(arrayUnderTest as NSArray, expectedArray as NSArray)
+        XCTAssertEqual(arrayUnderTest, expectedArray)
         
     }
 
