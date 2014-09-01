@@ -18,7 +18,7 @@ public extension String {
 //MARK: Parser
 public class CSwiftV {
     
-    public let columnCount: Int = 0
+    public let columnCount: Int
     public let headers : [String] = []
     public let keyedRows: [ [String:String] ] = []
     public let hasHeaders: Bool = 0
@@ -29,9 +29,9 @@ public class CSwiftV {
             return !includeElement.isEmpty;
         }
 
-        
+        self.columnCount = lines[0].componentsSeparatedByString(",").count
+
         if lines.count > 0 {
-            self.columnCount = columnCountFromLine(lines[0])
             self.hasHeaders = header;
             self.headers = parseHeaders(Line: lines[0])
             self.keyedRows = self.parseRows(Lines : lines)
@@ -41,11 +41,7 @@ public class CSwiftV {
     public convenience init(String string: String) {
         self.init(String: string, header: true)
     }
-    
-    let columnCountFromLine: (String) -> Int = { (string :String)->Int in
-        return string.componentsSeparatedByString(",").count
-    }
-    
+        
     func parseHeaders(Line line:String) -> [String] {
         
         let numberOfRows = line.componentsSeparatedByString(",").count
@@ -94,10 +90,13 @@ public class CSwiftV {
         
         return rows
     }
-    
+
+}
+
+
 //MARK: Helpers
-    
-    func includeQuotedNewLinesInFields(Fields fields: [String]) -> [String] {
+
+    func includeQuotedStringInFields(Fields fields: [String], quotedString :String) -> [String] {
         
         var mergedField = ""
         
@@ -106,7 +105,7 @@ public class CSwiftV {
         for field in fields {
             mergedField += field
             if (mergedField.componentsSeparatedByString("\"").count%2 != 1) {
-                mergedField += "\n"
+                mergedField += quotedString
                 continue
             }
             newArray.append(mergedField);
@@ -116,24 +115,17 @@ public class CSwiftV {
         return newArray;
     }
 
+
+    
+    func includeQuotedNewLinesInFields(Fields fields: [String]) -> [String] {
+        
+        return includeQuotedStringInFields(Fields: fields, "\n")
+    }
+
     
     func includeQuotedCommasInFields(Fields fields: [String]) -> [String] {
-        
-        var mergedField = ""
-        
-        var newArray = [String]()
-        
-        for field in fields {
-            mergedField += field
-            if (mergedField.componentsSeparatedByString("\"").count%2 != 1) {
-                mergedField += ","
-                continue
-            }
-            newArray.append(mergedField);
-            mergedField = ""
-        }
-        
-        return newArray;
+                
+        return includeQuotedStringInFields(Fields: fields, ",")
     }
     
     func includeQuotedQuotesInFields(Fields fields: [String]) -> [String] {
@@ -170,5 +162,3 @@ public class CSwiftV {
         
         return sanitized
     }
-
-}
