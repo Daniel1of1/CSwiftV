@@ -105,7 +105,7 @@ class CSwiftVTests: XCTestCase {
         
         testString = NSString.stringWithContentsOfURL(testCSVURL, encoding:NSUTF8StringEncoding, error:nil)!
         
-        let arrayUnderTest =  CSwiftV(String: testString).rows
+        let arrayUnderTest =  CSwiftV(String: testString).keyedRows
         
         let expectedArray = [
             ["Year":"1997","Make":"Ford","Model":"E350","Description":"descrition","Price":"3000.00"],
