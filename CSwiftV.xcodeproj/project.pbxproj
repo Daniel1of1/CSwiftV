@@ -11,14 +11,7 @@
 		1878D44119B27FB800FF84A7 /* CSwiftVTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1878D44019B27FB800FF84A7 /* CSwiftVTests.swift */; };
 		1878D44819B2896700FF84A7 /* CSwiftV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1878D44719B2896700FF84A7 /* CSwiftV.swift */; };
 		1878D44919B2896700FF84A7 /* CSwiftV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1878D44719B2896700FF84A7 /* CSwiftV.swift */; };
-		1878D44B19B2A32D00FF84A7 /* newLineSeparationNoEnd.csv in Resources */ = {isa = PBXBuildFile; fileRef = 1878D44A19B2A32D00FF84A7 /* newLineSeparationNoEnd.csv */; };
-		1878D44D19B2A34600FF84A7 /* newLineSeparation.csv in Resources */ = {isa = PBXBuildFile; fileRef = 1878D44C19B2A34600FF84A7 /* newLineSeparation.csv */; };
-		1878D45019B2ACFB00FF84A7 /* withHeader.csv in Resources */ = {isa = PBXBuildFile; fileRef = 1878D44E19B2ACFB00FF84A7 /* withHeader.csv */; };
-		1878D45119B2ACFB00FF84A7 /* withoutHeader.csv in Resources */ = {isa = PBXBuildFile; fileRef = 1878D44F19B2ACFB00FF84A7 /* withoutHeader.csv */; };
-		1878D45319B2BB3200FF84A7 /* withRandomQuotes.csv in Resources */ = {isa = PBXBuildFile; fileRef = 1878D45219B2BB3200FF84A7 /* withRandomQuotes.csv */; };
-		1878D45519B3528100FF84A7 /* withCommasInQuotes.csv in Resources */ = {isa = PBXBuildFile; fileRef = 1878D45419B3528100FF84A7 /* withCommasInQuotes.csv */; };
-		18D1A5D319B36A1400DDA84F /* withQuotesInQuotes.csv in Resources */ = {isa = PBXBuildFile; fileRef = 18D1A5D219B36A1400DDA84F /* withQuotesInQuotes.csv */; };
-		18D1A5D519B3756200DDA84F /* withNewLinesInQuotes.csv in Resources */ = {isa = PBXBuildFile; fileRef = 18D1A5D419B3756200DDA84F /* withNewLinesInQuotes.csv */; };
+		18C131E919BA506C001FBE9E /* SampleCSVStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C131E819BA506C001FBE9E /* SampleCSVStrings.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -40,14 +33,7 @@
 		1878D43F19B27FB800FF84A7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1878D44019B27FB800FF84A7 /* CSwiftVTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSwiftVTests.swift; sourceTree = "<group>"; };
 		1878D44719B2896700FF84A7 /* CSwiftV.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSwiftV.swift; sourceTree = "<group>"; };
-		1878D44A19B2A32D00FF84A7 /* newLineSeparationNoEnd.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = newLineSeparationNoEnd.csv; sourceTree = "<group>"; };
-		1878D44C19B2A34600FF84A7 /* newLineSeparation.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = newLineSeparation.csv; sourceTree = "<group>"; };
-		1878D44E19B2ACFB00FF84A7 /* withHeader.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = withHeader.csv; sourceTree = "<group>"; };
-		1878D44F19B2ACFB00FF84A7 /* withoutHeader.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = withoutHeader.csv; sourceTree = "<group>"; };
-		1878D45219B2BB3200FF84A7 /* withRandomQuotes.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = withRandomQuotes.csv; sourceTree = "<group>"; };
-		1878D45419B3528100FF84A7 /* withCommasInQuotes.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = withCommasInQuotes.csv; sourceTree = "<group>"; };
-		18D1A5D219B36A1400DDA84F /* withQuotesInQuotes.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = withQuotesInQuotes.csv; sourceTree = "<group>"; };
-		18D1A5D419B3756200DDA84F /* withNewLinesInQuotes.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = withNewLinesInQuotes.csv; sourceTree = "<group>"; };
+		18C131E819BA506C001FBE9E /* SampleCSVStrings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SampleCSVStrings.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,15 +84,8 @@
 		1878D43D19B27FB800FF84A7 /* CSwiftVTests */ = {
 			isa = PBXGroup;
 			children = (
-				1878D44E19B2ACFB00FF84A7 /* withHeader.csv */,
-				1878D44F19B2ACFB00FF84A7 /* withoutHeader.csv */,
-				1878D44A19B2A32D00FF84A7 /* newLineSeparationNoEnd.csv */,
-				1878D44C19B2A34600FF84A7 /* newLineSeparation.csv */,
-				1878D45219B2BB3200FF84A7 /* withRandomQuotes.csv */,
-				1878D45419B3528100FF84A7 /* withCommasInQuotes.csv */,
-				18D1A5D419B3756200DDA84F /* withNewLinesInQuotes.csv */,
-				18D1A5D219B36A1400DDA84F /* withQuotesInQuotes.csv */,
 				1878D44019B27FB800FF84A7 /* CSwiftVTests.swift */,
+				18C131E819BA506C001FBE9E /* SampleCSVStrings.swift */,
 				1878D43E19B27FB800FF84A7 /* Supporting Files */,
 			);
 			path = CSwiftVTests;
@@ -197,14 +176,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1878D45119B2ACFB00FF84A7 /* withoutHeader.csv in Resources */,
-				1878D45519B3528100FF84A7 /* withCommasInQuotes.csv in Resources */,
-				1878D44B19B2A32D00FF84A7 /* newLineSeparationNoEnd.csv in Resources */,
-				18D1A5D519B3756200DDA84F /* withNewLinesInQuotes.csv in Resources */,
-				1878D45319B2BB3200FF84A7 /* withRandomQuotes.csv in Resources */,
-				1878D44D19B2A34600FF84A7 /* newLineSeparation.csv in Resources */,
-				18D1A5D319B36A1400DDA84F /* withQuotesInQuotes.csv in Resources */,
-				1878D45019B2ACFB00FF84A7 /* withHeader.csv in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -226,6 +197,7 @@
 			files = (
 				1878D44919B2896700FF84A7 /* CSwiftV.swift in Sources */,
 				1878D44119B27FB800FF84A7 /* CSwiftVTests.swift in Sources */,
+				18C131E919BA506C001FBE9E /* SampleCSVStrings.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
