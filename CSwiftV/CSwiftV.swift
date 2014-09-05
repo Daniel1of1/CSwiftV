@@ -31,9 +31,9 @@ public class CSwiftV {
     
     public init(String string: String, headers:[String]?) {
         
-        let lines : [String] = includeQuotedNewLinesInFields(Fields:string.componentsSeparatedByCharactersInSet(NSCharacterSet.newlineCharacterSet())).filter{(includeElement: String) -> Bool in
+        let lines : [String] = includeQuotedNewLinesInFields(Fields:string.componentsSeparatedByCharactersInSet(NSCharacterSet.newlineCharacterSet()).filter{(includeElement: String) -> Bool in
             return !includeElement.isEmpty;
-        }
+        })
         var parsedLines = lines.map{
             (transform: String) -> [String] in
             let commaSanitized = includeQuotedCommasInFields(Fields: transform.componentsSeparatedByString(","))
@@ -90,7 +90,7 @@ public class CSwiftV {
     
     func includeQuotedNewLinesInFields(Fields fields: [String]) -> [String] {
         
-        return includeQuotedStringInFields(Fields: fields, "\n")
+        return includeQuotedStringInFields(Fields: fields, "\r\n")
     }
 
     
