@@ -26,8 +26,8 @@ class CSwiftVTests: XCTestCase {
         let arrayUnderTest =  CSwiftV(String: testString).rows
         
         let expectedArray = [
-            ["Year":"1997","Make":"Ford","Model":"E350","Description":"descrition","Price":"3000.00"],
-            ["Year":"1999","Make":"Chevy","Model":"Venture","Description":"another description","Price":"4900.00"]
+            ["1997","Ford","E350","descrition","3000.00"],
+            ["1999","Chevy","Venture","another description","4900.00"]
         ]
         
         XCTAssertEqual(arrayUnderTest, expectedArray)
@@ -41,8 +41,8 @@ class CSwiftVTests: XCTestCase {
         let arrayUnderTest =  CSwiftV(String: testString).rows
         
         let expectedArray = [
-            ["Year":"1997","Make":"Ford","Model":"E350","Description":"descrition","Price":"3000.00"],
-            ["Year":"1999","Make":"Chevy","Model":"Venture","Description":"another description","Price":"4900.00"]
+            ["1997","Ford","E350","descrition","3000.00"],
+            ["1999","Chevy","Venture","another description","4900.00"]
         ]
         
         XCTAssertEqual(arrayUnderTest, expectedArray)
@@ -55,7 +55,7 @@ class CSwiftVTests: XCTestCase {
         
         testString = NSString.stringWithContentsOfURL(testCSVURL, encoding:NSUTF8StringEncoding, error:nil)!
         
-        let arrayUnderTest : [String] =  CSwiftV(String: testString, header:nil).headers
+        let arrayUnderTest : [String] =  CSwiftV(String: testString, headers:nil).headers
         
         let expectedArray = ["Year","Make","Model","Description","Price"]
         
@@ -69,13 +69,13 @@ class CSwiftVTests: XCTestCase {
         
         testString = NSString.stringWithContentsOfURL(testCSVURL, encoding:NSUTF8StringEncoding, error:nil)!
         
-        let arrayUnderTest = CSwiftV(String: testString, header:nil).rows
+        let arrayUnderTest = CSwiftV(String: testString, headers:["Year","Make","Model","Description","Price"]).rows
         
         //XCTAssertNil(arrayUnderTest)
         
         let expectedArray = [
-            ["column1":"1997","column2":"Ford","column3":"E350","column4":"descrition","column5":"3000.00"],
-            ["column1":"1999","column2":"Chevy","column3":"Venture","column4":"another description","column5":"4900.00"]
+            ["1997","Ford","E350","descrition","3000.00"],
+            ["1999","Chevy","Venture","another description","4900.00"]
         ]
         
         XCTAssertEqual(arrayUnderTest, expectedArray)
@@ -91,8 +91,8 @@ class CSwiftVTests: XCTestCase {
         let arrayUnderTest =  CSwiftV(String: testString).rows
         
         let expectedArray = [
-            ["Year":"1997","Make":"Ford","Model":"E350","Description":"descrition","Price":"3000.00"],
-            ["Year":"1999","Make":"Chevy","Model":"Venture","Description":"another description","Price":"4900.00"]
+            ["1997","Ford","E350","descrition","3000.00"],
+            ["1999","Chevy","Venture","another description","4900.00"]
         ]
         
         XCTAssertEqual(arrayUnderTest, expectedArray)
@@ -108,8 +108,8 @@ class CSwiftVTests: XCTestCase {
         let arrayUnderTest =  CSwiftV(String: testString).rows
         
         let expectedArray = [
-            ["Year":"1997","Make":"Ford","Model":"E350","Description":"descrition","Price":"3000.00"],
-            ["Year":"1999","Make":"Chevy","Model":"Venture","Description":"another, amazing, description","Price":"4900.00"]
+            ["1997","Ford","E350","descrition","3000.00"],
+            ["1999","Chevy","Venture","another, amazing, description","4900.00"]
         ]
         
         XCTAssertEqual(arrayUnderTest, expectedArray)
@@ -125,8 +125,8 @@ class CSwiftVTests: XCTestCase {
         let arrayUnderTest =  CSwiftV(String: testString).rows as NSArray
         
         let expectedArray = [
-            ["Year":"1997","Make":"Ford","Model":"E350","Description":"descrition","Price":"3000.00"],
-            ["Year":"1999","Make":"Chevy","Model":"Venture","Description":"another, \"amazing\", description","Price":"4900.00"] as NSDictionary
+            ["1997","Ford","E350","descrition","3000.00"],
+            ["1999","Chevy","Venture","another, \"amazing\", description","4900.00"]
         ]
         
         XCTAssertEqual(arrayUnderTest, expectedArray)
@@ -142,8 +142,8 @@ class CSwiftVTests: XCTestCase {
         let arrayUnderTest =  CSwiftV(String: testString).rows
         
         let expectedArray = [
-            ["Year":"1997","Make":"Ford","Model":"E350","Description":"descrition","Price":"3000.00"],
-            ["Year":"1999","Make":"Chevy","Model":"Venture","Description":"another, \"amazing\",\ndescription\n","Price":"4900.00"]
+            ["1997","Ford","E350","descrition","3000.00"],
+            ["1999","Chevy","Venture","another, \"amazing\",\ndescription\n","4900.00"]
         ]
         
         XCTAssertEqual(arrayUnderTest, expectedArray)

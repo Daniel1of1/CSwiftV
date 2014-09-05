@@ -6,6 +6,12 @@
 //  Copyright (c) 2014 ManyThings. All rights reserved.
 //
 
+public enum CSVHeaderType {
+   case NoHeaders
+   case ContainsHeaders
+   case WithHeaders([String])
+}
+
 import Foundation
 
 //TODO: make these prettier and probably not extensions
@@ -21,78 +27,44 @@ public class CSwiftV {
     public let columnCount: Int
     public let headers : [String] = []
     public let keyedRows: [ [String:String] ] = []
-    public let hasHeaders: Bool = 0
+    public let rows: [[String]] = []
     
-    public init(String string: String, header:Bool) {
+    public init(String string: String, headers:[String]?) {
         
         let lines : [String] = includeQuotedNewLinesInFields(Fields:string.componentsSeparatedByCharactersInSet(NSCharacterSet.newlineCharacterSet())).filter{(includeElement: String) -> Bool in
             return !includeElement.isEmpty;
         }
-
-        self.columnCount = lines[0].componentsSeparatedByString(",").count
-
-        if lines.count > 0 {
-            self.hasHeaders = header;
-            self.headers = parseHeaders(Line: lines[0])
-            self.keyedRows = self.parseRows(Lines : lines)
-        }
-    }
-//TODO: Document that this assumes header string
-    public convenience init(String string: String) {
-        self.init(String: string, header: true)
-    }
-        
-    func parseHeaders(Line line:String) -> [String] {
-        
-        let numberOfRows = line.componentsSeparatedByString(",").count
-        
-        var headerRows :[String] = []
-        
-        if (!hasHeaders) {
-            for i in 1...numberOfRows {
-                headerRows.append("column\(i)")
-            }
-            
-            return headerRows;
-        }
-        
-        else {
-            return sanitizedFields(Fields: line.componentsSeparatedByString(","))
-
-            
-        }
-        
-    }
-    
-    func parseRows(Lines lines:[String]) -> [ [String:String] ] {
-        
-        var rows = [ [String:String] ]()
-        
-        for (lineNumber, line) in enumerate(lines) {
-            if (self.hasHeaders && lineNumber == 0) {
-                continue
-            }
-            var row = [String:String]()
-            
-            let commaSanitized = includeQuotedCommasInFields(Fields: line.componentsSeparatedByString(","))
+        var niceThings = lines.map{
+            (transform: String) -> [String] in
+            let commaSanitized = includeQuotedCommasInFields(Fields: transform.componentsSeparatedByString(","))
             
             let quoteSanitized = sanitizedFields(Fields: commaSanitized)
             
-            let fields = includeQuotedQuotesInFields(Fields: quoteSanitized)
-            
-            for (index, header) in enumerate(self.headers) {
-                let field : String = fields[index]
-                row[header] = field
-            }
-            
-            rows.append(row)
+            return includeQuotedQuotesInFields(Fields: quoteSanitized)
         }
+
+        if let unwrappedHeaders = headers {
+            self.headers = unwrappedHeaders
+        }
+        else {
+            self.headers = niceThings[0]
+            niceThings.removeAtIndex(0)
+        }
+
+        self.rows = niceThings
+
+        self.columnCount = self.headers.count
         
-        return rows
+
     }
 
+//TODO: Document that this assumes header string
+    public convenience init(String string: String) {
+        self.init(String: string, headers:nil)
+    }
+    }
+    
 }
-
 
 //MARK: Helpers
 
