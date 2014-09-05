@@ -23,7 +23,7 @@ public let withCommasInQuotes = "Year,Make,Model,Description,Price\r\n1997,Ford,
 
 public let withQuotesInQuotes = "Year,Make,Model,Description,Price\r\n1997,Ford,\"E350\",descrition,3000.00\r\n1999,Chevy,Venture,\"another, \"\"amazing\"\", description\",4900.00"
 
-public let withNewLinesInQuotes = "Year,Make,Model,Description,Price\r\n1997,Ford,\"E350\",descrition,3000.00\r\n1999,Chevy,Venture,\"another, \"\"amazing\"\",\ndescription\n\",4900.00\r\n"
+public let withNewLinesInQuotes = "Year,Make,Model,Description,Price\r\n1997,Ford,\"E350\",descrition,3000.00\r\n1999,Chevy,Venture,\"another, \"\"amazing\"\",\r\ndescription\r\n\",4900.00\r\n"
 
 class CSwiftVTests: XCTestCase {
    // modelling from http://tools.ietf.org/html/rfc4180#section-2
@@ -135,14 +135,13 @@ class CSwiftVTests: XCTestCase {
     
     func testThatItParsesFieldswithNewLinesInQuotes() {
         
-        let testCSVURL = NSBundle(forClass:CSwiftVTests.self).URLForResource("withNewLinesInQuotes", withExtension: "csv")!
-        
         testString = withNewLinesInQuotes
+        
         let arrayUnderTest =  CSwiftV(String: testString).rows
         
         let expectedArray = [
             ["1997","Ford","E350","descrition","3000.00"],
-            ["1999","Chevy","Venture","another, \"amazing\",\ndescription\n","4900.00"]
+            ["1999","Chevy","Venture","another, \"amazing\",\r\ndescription\r\n","4900.00"]
         ]
         
         XCTAssertEqual(arrayUnderTest, expectedArray)
