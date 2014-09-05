@@ -23,7 +23,7 @@ class CSwiftVTests: XCTestCase {
         let testCSVURL = NSBundle(forClass:CSwiftVTests.self).URLForResource("newLineSeparation", withExtension: "csv")!
         testString = NSString.stringWithContentsOfURL(testCSVURL, encoding:NSUTF8StringEncoding, error:nil)!
 
-        let arrayUnderTest =  CSwiftV(String: testString).keyedRows
+        let arrayUnderTest =  CSwiftV(String: testString).rows
         
         let expectedArray = [
             ["Year":"1997","Make":"Ford","Model":"E350","Description":"descrition","Price":"3000.00"],
@@ -38,7 +38,7 @@ class CSwiftVTests: XCTestCase {
         let testCSVURL = NSBundle(forClass:CSwiftVTests.self).URLForResource("newLineSeparationNoEnd", withExtension: "csv")!
         testString = NSString.stringWithContentsOfURL(testCSVURL, encoding:NSUTF8StringEncoding, error:nil)!
         
-        let arrayUnderTest =  CSwiftV(String: testString).keyedRows
+        let arrayUnderTest =  CSwiftV(String: testString).rows
         
         let expectedArray = [
             ["Year":"1997","Make":"Ford","Model":"E350","Description":"descrition","Price":"3000.00"],
@@ -55,7 +55,7 @@ class CSwiftVTests: XCTestCase {
         
         testString = NSString.stringWithContentsOfURL(testCSVURL, encoding:NSUTF8StringEncoding, error:nil)!
         
-        let arrayUnderTest : [String] =  CSwiftV(String: testString, header:true).headers
+        let arrayUnderTest : [String] =  CSwiftV(String: testString, header:nil).headers
         
         let expectedArray = ["Year","Make","Model","Description","Price"]
         
@@ -69,7 +69,7 @@ class CSwiftVTests: XCTestCase {
         
         testString = NSString.stringWithContentsOfURL(testCSVURL, encoding:NSUTF8StringEncoding, error:nil)!
         
-        let arrayUnderTest = CSwiftV(String: testString, header:false).keyedRows
+        let arrayUnderTest = CSwiftV(String: testString, header:nil).rows
         
         //XCTAssertNil(arrayUnderTest)
         
@@ -88,7 +88,7 @@ class CSwiftVTests: XCTestCase {
         
         testString = NSString.stringWithContentsOfURL(testCSVURL, encoding:NSUTF8StringEncoding, error:nil)!
         
-        let arrayUnderTest =  CSwiftV(String: testString).keyedRows
+        let arrayUnderTest =  CSwiftV(String: testString).rows
         
         let expectedArray = [
             ["Year":"1997","Make":"Ford","Model":"E350","Description":"descrition","Price":"3000.00"],
@@ -105,7 +105,7 @@ class CSwiftVTests: XCTestCase {
         
         testString = NSString.stringWithContentsOfURL(testCSVURL, encoding:NSUTF8StringEncoding, error:nil)!
         
-        let arrayUnderTest =  CSwiftV(String: testString).keyedRows
+        let arrayUnderTest =  CSwiftV(String: testString).rows
         
         let expectedArray = [
             ["Year":"1997","Make":"Ford","Model":"E350","Description":"descrition","Price":"3000.00"],
@@ -122,7 +122,7 @@ class CSwiftVTests: XCTestCase {
         
         testString = NSString.stringWithContentsOfURL(testCSVURL, encoding:NSUTF8StringEncoding, error:nil)!
         
-        let arrayUnderTest =  CSwiftV(String: testString).keyedRows as NSArray
+        let arrayUnderTest =  CSwiftV(String: testString).rows as NSArray
         
         let expectedArray = [
             ["Year":"1997","Make":"Ford","Model":"E350","Description":"descrition","Price":"3000.00"],
@@ -139,7 +139,7 @@ class CSwiftVTests: XCTestCase {
         
         testString = NSString.stringWithContentsOfURL(testCSVURL, encoding:NSUTF8StringEncoding, error:nil)!
         println("\(testString!)")
-        let arrayUnderTest =  CSwiftV(String: testString).keyedRows
+        let arrayUnderTest =  CSwiftV(String: testString).rows
         
         let expectedArray = [
             ["Year":"1997","Make":"Ford","Model":"E350","Description":"descrition","Price":"3000.00"],
