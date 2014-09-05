@@ -6,12 +6,6 @@
 //  Copyright (c) 2014 ManyThings. All rights reserved.
 //
 
-public enum CSVHeaderType {
-   case NoHeaders
-   case ContainsHeaders
-   case WithHeaders([String])
-}
-
 import Foundation
 
 //TODO: make these prettier and probably not extensions
