@@ -34,7 +34,7 @@ public class CSwiftV {
         let lines : [String] = includeQuotedNewLinesInFields(Fields:string.componentsSeparatedByCharactersInSet(NSCharacterSet.newlineCharacterSet())).filter{(includeElement: String) -> Bool in
             return !includeElement.isEmpty;
         }
-        var niceThings = lines.map{
+        var parsedLines = lines.map{
             (transform: String) -> [String] in
             let commaSanitized = includeQuotedCommasInFields(Fields: transform.componentsSeparatedByString(","))
             
@@ -47,11 +47,11 @@ public class CSwiftV {
             self.headers = unwrappedHeaders
         }
         else {
-            self.headers = niceThings[0]
-            niceThings.removeAtIndex(0)
+            self.headers = parsedLines[0]
+            parsedLines.removeAtIndex(0)
         }
 
-        self.rows = niceThings
+        self.rows = parsedLines
 
         self.columnCount = self.headers.count
         
@@ -61,7 +61,6 @@ public class CSwiftV {
 //TODO: Document that this assumes header string
     public convenience init(String string: String) {
         self.init(String: string, headers:nil)
-    }
     }
     
 }
