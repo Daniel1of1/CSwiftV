@@ -25,7 +25,7 @@ public class CSwiftV {
     
     public init(String string: String, headers:[String]?) {
         
-        let lines : [String] = includeQuotedStringInFields(Fields:string.componentsSeparatedByCharactersInSet(NSCharacterSet.newlineCharacterSet()).filter{(includeElement: String) -> Bool in
+        let lines : [String] = includeQuotedStringInFields(Fields:string.splitOnNewLine().filter{(includeElement: String) -> Bool in
             return !includeElement.isEmpty;
         } , "\r\n")
         
