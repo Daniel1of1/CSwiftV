@@ -58,20 +58,16 @@ public class CSwiftV {
 
         self.columnCount = self.headers.count
         
-        var tempKeyedRows = [[String : String]]()
-        
-        for (index, value) in enumerate(parsedLines) {
+        self.keyedRows = self.rows.map{ (field :[String]) -> [String:String] in
             
             var row = [String:String]()
             
-            for (index, value) in enumerate(value) {
+            for (index, value) in enumerate(field) {
                 row[self.headers[index]] = value
             }
             
-            tempKeyedRows.append(row)
+            return row
         }
-        self.keyedRows = tempKeyedRows
-
     }
 
 //TODO: Document that this assumes header string
