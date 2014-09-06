@@ -199,7 +199,7 @@ class CSwiftVTests: XCTestCase {
         
         testString = withQuotesInQuotes
         
-        let arrayUnderTest =  CSwiftV(String: testString).rows as NSArray
+        let arrayUnderTest =  CSwiftV(String: testString).rows
         
         let expectedArray = [
             ["1997","Ford","E350","descrition","3000.00"],
@@ -209,5 +209,21 @@ class CSwiftVTests: XCTestCase {
         XCTAssertEqual(arrayUnderTest, expectedArray)
         
     }
+    
+    func testThatCanReturnKeyedRows() {
+        
+        testString = withQuotesInQuotes
+        
+        let arrayUnderTest =  CSwiftV(String: testString).keyedRows!
+        
+        let expectedArray = [
+            ["Year":"1997","Make":"Ford","Model":"E350","Description":"descrition","Price":"3000.00"],
+            ["Year":"1999","Make":"Chevy","Model":"Venture","Description":"another, \"amazing\", description","Price":"4900.00"]
+        ]
+        
+        XCTAssertEqual(arrayUnderTest, expectedArray)
+        
+    }
+
     
 }

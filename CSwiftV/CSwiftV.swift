@@ -20,7 +20,7 @@ public class CSwiftV {
     
     public let columnCount: Int
     public let headers : [String] = []
-    public let keyedRows: [ [String:String] ] = []
+    public let keyedRows: [[String : String]]?
     public let rows: [[String]]
     
     public init(String string: String, headers:[String]?) {
@@ -58,6 +58,19 @@ public class CSwiftV {
 
         self.columnCount = self.headers.count
         
+        var tempKeyedRows = [[String : String]]()
+        
+        for (index, value) in enumerate(parsedLines) {
+            
+            var row = [String:String]()
+            
+            for (index, value) in enumerate(value) {
+                row[self.headers[index]] = value
+            }
+            
+            tempKeyedRows.append(row)
+        }
+        self.keyedRows = tempKeyedRows
 
     }
 
