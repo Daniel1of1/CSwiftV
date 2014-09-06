@@ -25,12 +25,13 @@ public class CSwiftV {
     
     public init(String string: String, headers:[String]?) {
         
-        let lines : [String] = includeQuotedNewLinesInFields(Fields:string.componentsSeparatedByCharactersInSet(NSCharacterSet.newlineCharacterSet()).filter{(includeElement: String) -> Bool in
+        let lines : [String] = includeQuotedStringInFields(Fields:string.componentsSeparatedByCharactersInSet(NSCharacterSet.newlineCharacterSet()).filter{(includeElement: String) -> Bool in
             return !includeElement.isEmpty;
-        })
+        } , "\r\n")
+        
         var parsedLines = lines.map{
             (transform: String) -> [String] in
-            let commaSanitized = includeQuotedCommasInFields(Fields: transform.componentsSeparatedByString(","))
+            let commaSanitized = includeQuotedStringInFields(Fields: transform.componentsSeparatedByString(",") , ",")
             
             let quoteSanitized = commaSanitized.map{(input: String) -> String in
                 return sanitizedStringMap(String: input)
@@ -80,17 +81,6 @@ func includeQuotedStringInFields(Fields fields: [String], quotedString :String) 
     }
     
     return newArray;
-}
-
-func includeQuotedNewLinesInFields(Fields fields: [String]) -> [String] {
-    
-    return includeQuotedStringInFields(Fields: fields, "\r\n")
-}
-
-
-func includeQuotedCommasInFields(Fields fields: [String]) -> [String] {
-    
-    return includeQuotedStringInFields(Fields: fields, ",")
 }
 
 func includeQuotedQuotesInFields(Fields fields: [String]) -> [String] {
