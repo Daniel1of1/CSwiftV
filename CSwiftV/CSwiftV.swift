@@ -32,12 +32,18 @@ public class CSwiftV {
         var parsedLines = lines.map{
             (transform: String) -> [String] in
             let commaSanitized = includeQuotedStringInFields(Fields: transform.componentsSeparatedByString(",") , ",")
-            
-            let quoteSanitized = commaSanitized.map{(input: String) -> String in
-                return sanitizedStringMap(String: input)
+                .map
+                {
+                    (input: String) -> String in
+                    return sanitizedStringMap(String: input)
+                }
+                .map
+                {
+                    (input: String) -> String in
+                    return input.stringByReplacingOccurrencesOfString("\"\"", withString: "\"", options: NSStringCompareOptions.LiteralSearch)
             }
-    
-            return includeQuotedQuotesInFields(Fields: quoteSanitized)
+            
+            return commaSanitized;
         }
 
         if let unwrappedHeaders = headers {
@@ -63,7 +69,6 @@ public class CSwiftV {
 }
 
 //MARK: Helpers
-
 func includeQuotedStringInFields(Fields fields: [String], quotedString :String) -> [String] {
     
     var mergedField = ""
@@ -83,12 +88,6 @@ func includeQuotedStringInFields(Fields fields: [String], quotedString :String) 
     return newArray;
 }
 
-func includeQuotedQuotesInFields(Fields fields: [String]) -> [String] {
-    
-    return fields.map{(var inputString) -> String in
-        return inputString.stringByReplacingOccurrencesOfString("\"\"", withString: "\"", options: NSStringCompareOptions.LiteralSearch)
-    }
-}
 
 func sanitizedStringMap(String string :String) -> String {
     
@@ -111,4 +110,3 @@ func sanitizedStringMap(String string :String) -> String {
     }
     
 }
-
