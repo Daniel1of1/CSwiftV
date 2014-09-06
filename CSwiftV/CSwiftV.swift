@@ -21,7 +21,7 @@ public class CSwiftV {
     public let columnCount: Int
     public let headers : [String] = []
     public let keyedRows: [ [String:String] ] = []
-    public let rows: [[String]] = []
+    public let rows: [[String]]
     
     public init(String string: String, headers:[String]?) {
         
@@ -32,8 +32,10 @@ public class CSwiftV {
             (transform: String) -> [String] in
             let commaSanitized = includeQuotedCommasInFields(Fields: transform.componentsSeparatedByString(","))
             
-            let quoteSanitized = sanitizedFields(Fields: commaSanitized)
-            
+            let quoteSanitized = commaSanitized.map{(input: String) -> String in
+                return sanitizedStringMap(String: input)
+            }
+    
             return includeQuotedQuotesInFields(Fields: quoteSanitized)
         }
 
@@ -61,69 +63,62 @@ public class CSwiftV {
 
 //MARK: Helpers
 
-    func includeQuotedStringInFields(Fields fields: [String], quotedString :String) -> [String] {
-        
-        var mergedField = ""
-        
-        var newArray = [String]()
-        
-        for field in fields {
-            mergedField += field
-            if (mergedField.componentsSeparatedByString("\"").count%2 != 1) {
-                mergedField += quotedString
-                continue
-            }
-            newArray.append(mergedField);
-            mergedField = ""
+func includeQuotedStringInFields(Fields fields: [String], quotedString :String) -> [String] {
+    
+    var mergedField = ""
+    
+    var newArray = [String]()
+    
+    for field in fields {
+        mergedField += field
+        if (mergedField.componentsSeparatedByString("\"").count%2 != 1) {
+            mergedField += quotedString
+            continue
         }
-        
-        return newArray;
-    }
-
-
-    
-    func includeQuotedNewLinesInFields(Fields fields: [String]) -> [String] {
-        
-        return includeQuotedStringInFields(Fields: fields, "\r\n")
-    }
-
-    
-    func includeQuotedCommasInFields(Fields fields: [String]) -> [String] {
-                
-        return includeQuotedStringInFields(Fields: fields, ",")
+        newArray.append(mergedField);
+        mergedField = ""
     }
     
-    func includeQuotedQuotesInFields(Fields fields: [String]) -> [String] {
-        
-        return fields.map{(var inputString) -> String in
-            return inputString.stringByReplacingOccurrencesOfString("\"\"", withString: "\"", options: NSStringCompareOptions.LiteralSearch)
-            }
-    }
+    return newArray;
+}
 
+func includeQuotedNewLinesInFields(Fields fields: [String]) -> [String] {
     
-    func sanitizedFields(Fields fields:[String]) -> [String] {
-        
-        var sanitized: [String] = []
-        
-        for field in fields {
-            let doubleQuote : String = "\""
-            
-            let startsWithQuote: Bool = field.hasPrefix("\"");
-            let endsWithQuote: Bool = field.hasSuffix("\"");
-            
-            if (startsWithQuote && endsWithQuote) {
-                let startIndex = advance(field.startIndex, 1)
-                let endIndex = advance(field.endIndex,-1)
-                let range = startIndex..<endIndex
-                
-                let sanitizedField: String = field.substringWithRange(range)
-                
-                sanitized.append(sanitizedField);
-            }
-            else {
-                sanitized.append(field)
-            }
-        }
-        
-        return sanitized
+    return includeQuotedStringInFields(Fields: fields, "\r\n")
+}
+
+
+func includeQuotedCommasInFields(Fields fields: [String]) -> [String] {
+    
+    return includeQuotedStringInFields(Fields: fields, ",")
+}
+
+func includeQuotedQuotesInFields(Fields fields: [String]) -> [String] {
+    
+    return fields.map{(var inputString) -> String in
+        return inputString.stringByReplacingOccurrencesOfString("\"\"", withString: "\"", options: NSStringCompareOptions.LiteralSearch)
     }
+}
+
+func sanitizedStringMap(String string :String) -> String {
+    
+    let doubleQuote : String = "\""
+    
+    let startsWithQuote: Bool = string.hasPrefix("\"");
+    let endsWithQuote: Bool = string.hasSuffix("\"");
+    
+    if (startsWithQuote && endsWithQuote) {
+        let startIndex = advance(string.startIndex, 1)
+        let endIndex = advance(string.endIndex,-1)
+        let range = startIndex ..< endIndex
+        
+        let sanitizedField: String = string.substringWithRange(range)
+        
+        return sanitizedField
+    }
+    else {
+        return string;
+    }
+    
+}
+
