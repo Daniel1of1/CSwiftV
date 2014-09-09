@@ -23,7 +23,7 @@ public class CSwiftV {
     public let keyedRows: [[String : String]]?
     public let rows: [[String]]
     
-    public init(String string: String, headers:[String]?) {
+    public init(String string: String, headers:[String]?, separator:String) {
         
         let lines : [String] = includeQuotedStringInFields(Fields:string.splitOnNewLine().filter{(includeElement: String) -> Bool in
             return !includeElement.isEmpty;
@@ -31,7 +31,7 @@ public class CSwiftV {
         
         var parsedLines = lines.map{
             (transform: String) -> [String] in
-            let commaSanitized = includeQuotedStringInFields(Fields: transform.componentsSeparatedByString(",") , ",")
+            let commaSanitized = includeQuotedStringInFields(Fields: transform.componentsSeparatedByString(separator) , separator)
                 .map
                 {
                     (input: String) -> String in
@@ -72,7 +72,15 @@ public class CSwiftV {
 
 //TODO: Document that this assumes header string
     public convenience init(String string: String) {
-        self.init(String: string, headers:nil)
+        self.init(String: string, headers:nil, separator:",")
+    }
+    
+    public convenience init(String string: String, separator:String) {
+        self.init(String: string, headers:nil, separator:separator)
+    }
+    
+    public convenience init(String string: String, headers:[String]?) {
+        self.init(String: string, headers:headers, separator:",")
     }
     
 }

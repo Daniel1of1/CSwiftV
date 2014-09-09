@@ -25,6 +25,8 @@ public let withQuotesInQuotes = "Year,Make,Model,Description,Price\r\n1997,Ford,
 
 public let withNewLinesInQuotes = "Year,Make,Model,Description,Price\r\n1997,Ford,\"E350\",descrition,3000.00\r\n1999,Chevy,Venture,\"another, \"\"amazing\"\",\r\ndescription\r\n\",4900.00\r\n"
 
+public let withTabSeparator = "Year\tMake\tModel\tDescription\tPrice\r\n1997\tFord\t\"E350\"\tdescrition\t3000.00\r\n1999\tChevy\tVenture\t\"another\t \"\"amazing\"\"\t description\"\t4900.00\r\n"
+
 class CSwiftVTests: XCTestCase {
     
     var testString: String!
@@ -224,6 +226,22 @@ class CSwiftVTests: XCTestCase {
         XCTAssertEqual(arrayUnderTest, expectedArray)
         
     }
+    
+    func testThatItCanParseArbitrarySeparators() {
+        
+        testString = withTabSeparator
+        
+        let arrayUnderTest =  CSwiftV(String: testString, separator:"\t").keyedRows!
+        
+        let expectedArray = [
+            ["Year":"1997","Make":"Ford","Model":"E350","Description":"descrition","Price":"3000.00"],
+            ["Year":"1999","Make":"Chevy","Model":"Venture","Description":"another\t \"amazing\"\t description","Price":"4900.00"]
+        ]
+        
+        XCTAssertEqual(arrayUnderTest, expectedArray)
+        
+    }
+
 
     
 }

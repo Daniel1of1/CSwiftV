@@ -10,7 +10,7 @@
 		1878D43219B27F9E00FF84A7 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1878D43119B27F9E00FF84A7 /* main.swift */; };
 		1878D44119B27FB800FF84A7 /* CSwiftVTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1878D44019B27FB800FF84A7 /* CSwiftVTests.swift */; };
 		1878D44819B2896700FF84A7 /* CSwiftV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1878D44719B2896700FF84A7 /* CSwiftV.swift */; };
-		1878D44919B2896700FF84A7 /* CSwiftV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1878D44719B2896700FF84A7 /* CSwiftV.swift */; };
+		188E206719BE5CF5008F6C60 /* CSwiftV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1878D44719B2896700FF84A7 /* CSwiftV.swift */; };
 		18C131E919BA506C001FBE9E /* SampleCSVStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C131E819BA506C001FBE9E /* SampleCSVStrings.swift */; };
 /* End PBXBuildFile section */
 
@@ -195,8 +195,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1878D44919B2896700FF84A7 /* CSwiftV.swift in Sources */,
 				1878D44119B27FB800FF84A7 /* CSwiftVTests.swift in Sources */,
+				188E206719BE5CF5008F6C60 /* CSwiftV.swift in Sources */,
 				18C131E919BA506C001FBE9E /* SampleCSVStrings.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
