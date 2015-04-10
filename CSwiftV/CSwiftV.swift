@@ -19,7 +19,7 @@ public extension String {
 public class CSwiftV {
     
     public let columnCount: Int
-    public let headers : [String] = []
+    public let headers : [String]
     public let keyedRows: [[String : String]]?
     public let rows: [[String]]
     
@@ -45,29 +45,35 @@ public class CSwiftV {
             
             return commaSanitized;
         }
+        
+        let tempHeaders : [String]
 
         if let unwrappedHeaders = headers {
-            self.headers = unwrappedHeaders
+            tempHeaders = unwrappedHeaders
         }
         else {
-            self.headers = parsedLines[0]
+            tempHeaders = parsedLines[0]
             parsedLines.removeAtIndex(0)
         }
 
         self.rows = parsedLines
-
-        self.columnCount = self.headers.count
         
-        self.keyedRows = self.rows.map{ (field :[String]) -> [String:String] in
+        self.columnCount = tempHeaders.count
+        
+        let keysAndRows = self.rows.map { (field :[String]) -> [String:String] in
             
             var row = [String:String]()
             
             for (index, value) in enumerate(field) {
-                row[self.headers[index]] = value
+                row[tempHeaders[index]] = value
             }
             
             return row
         }
+        
+        self.keyedRows = keysAndRows
+        
+        self.headers = tempHeaders
     }
 
 //TODO: Document that this assumes header string

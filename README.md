@@ -26,9 +26,4 @@ let keyedRows = csv.keyedRows // [
 
 ```
 
-###Prerequisites
-
-Xcode6β7
-
-
 
