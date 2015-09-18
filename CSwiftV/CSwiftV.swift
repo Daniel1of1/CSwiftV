@@ -5,6 +5,7 @@
 //  Created by Daniel Haight on 30/08/2014.
 //  Copyright (c) 2014 ManyThings. All rights reserved.
 //
+// Updated to Swift 2 by Andy Drexler 9/18/2015
 
 import Foundation
 
@@ -27,11 +28,11 @@ public class CSwiftV {
         
         let lines : [String] = includeQuotedStringInFields(Fields:string.splitOnNewLine().filter{(includeElement: String) -> Bool in
             return !includeElement.isEmpty;
-        } , "\r\n")
+            } , quotedString: "\r\n")
         
         var parsedLines = lines.map{
             (transform: String) -> [String] in
-            let commaSanitized = includeQuotedStringInFields(Fields: transform.componentsSeparatedByString(separator) , separator)
+            let commaSanitized = includeQuotedStringInFields(Fields: transform.componentsSeparatedByString(separator) , quotedString: separator)
                 .map
                 {
                     (input: String) -> String in
@@ -47,7 +48,7 @@ public class CSwiftV {
         }
         
         let tempHeaders : [String]
-
+        
         if let unwrappedHeaders = headers {
             tempHeaders = unwrappedHeaders
         }
@@ -55,7 +56,7 @@ public class CSwiftV {
             tempHeaders = parsedLines[0]
             parsedLines.removeAtIndex(0)
         }
-
+        
         self.rows = parsedLines
         
         self.columnCount = tempHeaders.count
@@ -64,7 +65,7 @@ public class CSwiftV {
             
             var row = [String:String]()
             
-            for (index, value) in enumerate(field) {
+            for (index, value) in field.enumerate() {
                 row[tempHeaders[index]] = value
             }
             
@@ -75,8 +76,8 @@ public class CSwiftV {
         
         self.headers = tempHeaders
     }
-
-//TODO: Document that this assumes header string
+    
+    //TODO: Document that this assumes header string
     public convenience init(String string: String) {
         self.init(String: string, headers:nil, separator:",")
     }
@@ -114,14 +115,12 @@ func includeQuotedStringInFields(Fields fields: [String], quotedString :String) 
 
 func sanitizedStringMap(String string :String) -> String {
     
-    let doubleQuote : String = "\""
-    
     let startsWithQuote: Bool = string.hasPrefix("\"");
     let endsWithQuote: Bool = string.hasSuffix("\"");
     
     if (startsWithQuote && endsWithQuote) {
-        let startIndex = advance(string.startIndex, 1)
-        let endIndex = advance(string.endIndex,-1)
+        let startIndex = string.startIndex.advancedBy(1)
+        let endIndex = string.endIndex.advancedBy(-1)
         let range = startIndex ..< endIndex
         
         let sanitizedField: String = string.substringWithRange(range)

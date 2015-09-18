@@ -376,6 +376,7 @@
 		1878D42619B27F9E00FF84A7 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0600;
 				ORGANIZATIONNAME = ManyThings;
 				TargetAttributes = {
@@ -869,6 +870,7 @@
 				18B6650E1AF7BC4B009D5195 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		18B6650F1AF7BC4B009D5195 /* Build configuration list for PBXNativeTarget "CSwiftVOSXTests" */ = {
 			isa = XCConfigurationList;
@@ -877,6 +879,7 @@
 				18B665111AF7BC4B009D5195 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		18B6652A1AF7BC5C009D5195 /* Build configuration list for PBXNativeTarget "CSwiftVIOS" */ = {
 			isa = XCConfigurationList;
@@ -885,6 +888,7 @@
 				18B6652C1AF7BC5C009D5195 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		18B6652D1AF7BC5C009D5195 /* Build configuration list for PBXNativeTarget "CSwiftVIOSTests" */ = {
 			isa = XCConfigurationList;
@@ -893,6 +897,7 @@
 				18B6652F1AF7BC5C009D5195 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
