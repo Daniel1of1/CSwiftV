@@ -27,11 +27,11 @@ public class CSwiftV {
         
         let lines : [String] = includeQuotedStringInFields(Fields:string.splitOnNewLine().filter{(includeElement: String) -> Bool in
             return !includeElement.isEmpty;
-        } , "\r\n")
+        } , quotedString: "\r\n")
         
         var parsedLines = lines.map{
             (transform: String) -> [String] in
-            let commaSanitized = includeQuotedStringInFields(Fields: transform.componentsSeparatedByString(separator) , separator)
+            let commaSanitized = includeQuotedStringInFields(Fields: transform.componentsSeparatedByString(separator) ,quotedString:separator)
                 .map
                 {
                     (input: String) -> String in
@@ -64,7 +64,7 @@ public class CSwiftV {
             
             var row = [String:String]()
             
-            for (index, value) in enumerate(field) {
+            for (index, value) in field.enumerate() {
                 row[tempHeaders[index]] = value
             }
             
@@ -114,14 +114,13 @@ func includeQuotedStringInFields(Fields fields: [String], quotedString :String) 
 
 func sanitizedStringMap(String string :String) -> String {
     
-    let doubleQuote : String = "\""
     
     let startsWithQuote: Bool = string.hasPrefix("\"");
     let endsWithQuote: Bool = string.hasSuffix("\"");
     
     if (startsWithQuote && endsWithQuote) {
-        let startIndex = advance(string.startIndex, 1)
-        let endIndex = advance(string.endIndex,-1)
+        let startIndex = string.startIndex.advancedBy(1)
+        let endIndex = string.endIndex.advancedBy(-1)
         let range = startIndex ..< endIndex
         
         let sanitizedField: String = string.substringWithRange(range)
