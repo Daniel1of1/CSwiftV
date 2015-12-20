@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1878D43219B27F9E00FF84A7 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1878D43119B27F9E00FF84A7 /* main.swift */; };
 		1878D44119B27FB800FF84A7 /* CSwiftVTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1878D44019B27FB800FF84A7 /* CSwiftVTests.swift */; };
 		1878D44819B2896700FF84A7 /* CSwiftV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1878D44719B2896700FF84A7 /* CSwiftV.swift */; };
 		188E206719BE5CF5008F6C60 /* CSwiftV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1878D44719B2896700FF84A7 /* CSwiftV.swift */; };
@@ -53,7 +52,6 @@
 
 /* Begin PBXFileReference section */
 		1878D42E19B27F9E00FF84A7 /* CSwiftV */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = CSwiftV; sourceTree = BUILT_PRODUCTS_DIR; };
-		1878D43119B27F9E00FF84A7 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		1878D43C19B27FB800FF84A7 /* CSwiftVTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CSwiftVTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1878D43F19B27FB800FF84A7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1878D44019B27FB800FF84A7 /* CSwiftVTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSwiftVTests.swift; sourceTree = "<group>"; };
@@ -150,7 +148,6 @@
 		1878D43019B27F9E00FF84A7 /* CSwiftV */ = {
 			isa = PBXGroup;
 			children = (
-				1878D43119B27F9E00FF84A7 /* main.swift */,
 				1878D44719B2896700FF84A7 /* CSwiftV.swift */,
 			);
 			path = CSwiftV;
@@ -376,6 +373,8 @@
 		1878D42619B27F9E00FF84A7 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftMigration = 0720;
+				LastSwiftUpdateCheck = 0720;
 				LastUpgradeCheck = 0600;
 				ORGANIZATIONNAME = ManyThings;
 				TargetAttributes = {
@@ -465,7 +464,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				1878D44819B2896700FF84A7 /* CSwiftV.swift in Sources */,
-				1878D43219B27F9E00FF84A7 /* main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -869,6 +867,7 @@
 				18B6650E1AF7BC4B009D5195 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		18B6650F1AF7BC4B009D5195 /* Build configuration list for PBXNativeTarget "CSwiftVOSXTests" */ = {
 			isa = XCConfigurationList;
@@ -877,6 +876,7 @@
 				18B665111AF7BC4B009D5195 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		18B6652A1AF7BC5C009D5195 /* Build configuration list for PBXNativeTarget "CSwiftVIOS" */ = {
 			isa = XCConfigurationList;
@@ -885,6 +885,7 @@
 				18B6652C1AF7BC5C009D5195 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		18B6652D1AF7BC5C009D5195 /* Build configuration list for PBXNativeTarget "CSwiftVIOSTests" */ = {
 			isa = XCConfigurationList;
@@ -893,6 +894,7 @@
 				18B6652F1AF7BC5C009D5195 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
