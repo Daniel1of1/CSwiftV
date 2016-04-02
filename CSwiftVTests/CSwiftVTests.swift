@@ -23,9 +23,11 @@ public let withCommasInQuotes = "Year,Make,Model,Description,Price\r\n1997,Ford,
 
 public let withQuotesInQuotes = "Year,Make,Model,Description,Price\r\n1997,Ford,\"E350\",descrition,3000.00\r\n1999,Chevy,Venture,\"another, \"\"amazing\"\", description\",4900.00"
 
-public let withNewLinesInQuotes = "Year,Make,Model,Description,Price\r\n1997,Ford,\"E350\",descrition,3000.00\r\n1999,Chevy,Venture,\"another, \"\"amazing\"\",\r\ndescription\r\n\",4900.00\r\n"
+public let withNewLinesInQuotes = "Year,Make,Model,Description,Price\r\n1997,Ford,\"E350\",descrition,3000.00\r\n1999,Chevy,Venture,\"another, \"\"amazing\"\",\r\n\r\ndescription\r\n\",4900.00\r\n"
 
 public let withTabSeparator = "Year\tMake\tModel\tDescription\tPrice\r\n1997\tFord\t\"E350\"\tdescrition\t3000.00\r\n1999\tChevy\tVenture\t\"another\t \"\"amazing\"\"\t description\"\t4900.00\r\n"
+
+public let singleString = "1999,Chevy,Venture,\"another, \"\"amazing\"\",\r\n\r\ndescription\r\n\",4900.00"
 
 class CSwiftVTests: XCTestCase {
     
@@ -184,7 +186,7 @@ class CSwiftVTests: XCTestCase {
         
         let expectedArray = [
             ["1997","Ford","E350","descrition","3000.00"],
-            ["1999","Chevy","Venture","another, \"amazing\",\r\ndescription\r\n","4900.00"]
+            ["1999","Chevy","Venture","another, \"amazing\",\r\n\r\ndescription\r\n","4900.00"]
         ]
         
         XCTAssertEqual(arrayUnderTest, expectedArray)
@@ -242,6 +244,36 @@ class CSwiftVTests: XCTestCase {
         
     }
 
+    func testThatItCanGetCellsFromAstring() {
+        testString = withNewLinesInQuotes
+
+        let arrayUnderTest =  recordsFromString(testString)
+
+        let expectedArray = [
+            "Year,Make,Model,Description,Price",
+            "1997,Ford,\"E350\",descrition,3000.00",
+            "1999,Chevy,Venture,\"another, \"\"amazing\"\",\r\n\r\ndescription\r\n\",4900.00"
+        ]
+
+        XCTAssertEqual(arrayUnderTest, expectedArray)
+    }
+
+
+    func testThatItCanGetCells() {
+        testString = singleString
+
+        let arrayUnderTest =  cellsFromString(testString)
+
+        let expectedArray = [
+            "1999",
+            "Chevy",
+            "Venture",
+            "another, \"\"amazing\"\",\r\n\r\ndescription\r\n",
+            "4900.00"
+        ]
+
+        XCTAssertEqual(arrayUnderTest, expectedArray)
+    }
 
     
 }
