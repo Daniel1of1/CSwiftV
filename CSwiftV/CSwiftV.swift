@@ -8,17 +8,10 @@
 
 import Foundation
 
-//TODO: make these prettier and probably not extensions
-public extension String {
-    func splitOnNewLine () -> ([String]) {
-        return self.componentsSeparatedByCharactersInSet(NSCharacterSet.newlineCharacterSet())
-    }
-}
-
 //MARK: Parser
 public class CSwiftV {
 
-    public let columnCount: Int
+    private let columnCount: Int
     public let headers: [String]
     public let keyedRows: [[String: String]]?
     public let rows: [[String]]
@@ -67,7 +60,7 @@ func cellsFromString(rowString:String, separator: String = ",") -> [String] {
     return split(separator, string: rowString).map { element in
         if let first = element.characters.first, let last = element.characters.last {
             if (first == "\"" && last == "\"" ) {
-                let range = Range(start: element.startIndex.successor() , end: element.endIndex.predecessor())
+                let range = Range(element.startIndex.successor() ..< element.endIndex.predecessor())
                 return element.substringWithRange(range)
             }
         }
