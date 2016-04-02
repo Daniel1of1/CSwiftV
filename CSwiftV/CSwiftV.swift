@@ -23,7 +23,7 @@ public class CSwiftV {
     public let keyedRows: [[String: String]]?
     public let rows: [[String]]
 
-    public init(String string: String, headers:[String]?, separator:String) {
+    public init(String string: String, separator:String = ",", headers:[String]? = nil) {
 
         var parsedLines = recordsFromString(string.stringByReplacingOccurrencesOfString("\r\n", withString: "\n")).map { cellsFromString($0, separator: separator) }
 
@@ -54,15 +54,6 @@ public class CSwiftV {
 
         self.keyedRows = keysAndRows
         self.headers = tempHeaders
-    }
-    
-    //TODO: Document that this assumes header string
-    public convenience init(String string: String) {
-        self.init(String: string, headers: nil, separator: ",")
-    }
-
-    public convenience init(String string: String, separator:String) {
-        self.init(String: string, headers:nil, separator:separator)
     }
 
     public convenience init(String string: String, headers:[String]?) {

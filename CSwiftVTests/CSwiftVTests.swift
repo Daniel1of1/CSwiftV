@@ -106,7 +106,7 @@ class CSwiftVTests: XCTestCase {
         
         testString = newLineSeparationNoEnd
         
-        let arrayUnderTest : [String] =  CSwiftV(String: testString, headers:nil).headers
+        let arrayUnderTest : [String] =  CSwiftV(String: testString).headers
         
         let expectedArray = ["Year","Make","Model","Description","Price"]
         
@@ -125,7 +125,7 @@ class CSwiftVTests: XCTestCase {
         
         testString = withoutHeader
         
-        let arrayUnderTest = CSwiftV(String: testString, headers:["Year","Make","Model","Description","Price"]).rows
+        let arrayUnderTest = CSwiftV(String: testString, separator:",", headers:["Year","Make","Model","Description","Price"]).rows
         
         //XCTAssertNil(arrayUnderTest)
         
