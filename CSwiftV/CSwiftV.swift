@@ -71,48 +71,6 @@ public class CSwiftV {
 
 }
 
-//MARK: Helpers
-func includeQuotedStringInFields(Fields fields: [String], quotedString :String) -> [String] {
-
-    var mergedField = ""
-
-    var newArray = [String]()
-
-    for field in fields {
-        mergedField += field
-        if mergedField.componentsSeparatedByString("\"").count%2 != 1 {
-            mergedField += quotedString
-            continue
-        }
-        newArray.append(mergedField)
-        mergedField = ""
-    }
-
-    return newArray;
-}
-
-
-func sanitizedStringMap(String string :String) -> String {
-
-
-    let startsWithQuote: Bool = string.hasPrefix("\"");
-    let endsWithQuote: Bool = string.hasSuffix("\"");
-
-    if (startsWithQuote && endsWithQuote) {
-        let startIndex = string.startIndex.advancedBy(1)
-        let endIndex = string.endIndex.advancedBy(-1)
-        let range = startIndex ..< endIndex
-
-        let sanitizedField: String = string.substringWithRange(range)
-
-        return sanitizedField
-    }
-    else {
-        return string
-    }
-
-}
-
 func cellsFromString(rowString:String, separator: String = ",") -> [String] {
 
     return split(separator, string: rowString).map { element in
@@ -140,7 +98,6 @@ func split(separator: String, string: String) -> [String] {
         return string.componentsSeparatedByString("\"").count % 2 == 0
     }
 
-    print(initial)
     let merged = initial.reduce([]) { (prevArray, newString) -> [String] in
 
         if let record = prevArray.last {
