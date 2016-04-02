@@ -20,15 +20,7 @@ public class CSwiftV {
 
         var parsedLines = recordsFromString(string.stringByReplacingOccurrencesOfString("\r\n", withString: "\n")).map { cellsFromString($0, separator: separator) }
 
-        let tempHeaders : [String]
-
-        if let unwrappedHeaders = headers {
-            tempHeaders = unwrappedHeaders
-        }
-        else {
-            tempHeaders = parsedLines[0]
-            parsedLines.removeAtIndex(0)
-        }
+        let tempHeaders = headers ?? parsedLines[0]
 
         self.rows = parsedLines
 
