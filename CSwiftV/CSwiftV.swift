@@ -25,25 +25,7 @@ public class CSwiftV {
 
     public init(String string: String, headers:[String]?, separator:String) {
 
-        let lines : [String] = includeQuotedStringInFields(Fields:string.splitOnNewLine().filter{(includeElement: String) -> Bool in
-            return !includeElement.isEmpty;
-            } , quotedString: "\r\n")
-
-        var parsedLines = lines.map{
-            (transform: String) -> [String] in
-            let commaSanitized = includeQuotedStringInFields(Fields: transform.componentsSeparatedByString(separator),quotedString: separator)
-                .map
-                {
-                    (input: String) -> String in
-                    return sanitizedStringMap(String: input)
-                }
-                .map
-                {
-                    (input: String) -> String in
-                    return input.stringByReplacingOccurrencesOfString("\"\"", withString: "\"", options: NSStringCompareOptions.LiteralSearch)
-            }
-            return commaSanitized;
-        }
+        var parsedLines = recordsFromString(string.stringByReplacingOccurrencesOfString("\r\n", withString: "\n")).map { cellsFromString($0, separator: separator) }
 
         let tempHeaders : [String]
 
@@ -131,9 +113,9 @@ func sanitizedStringMap(String string :String) -> String {
 
 }
 
-func cellsFromString(rowString:String) -> [String] {
+func cellsFromString(rowString:String, separator: String = ",") -> [String] {
 
-    return split(",", string: rowString).map { element in
+    return split(separator, string: rowString).map { element in
         if let first = element.characters.first, let last = element.characters.last {
             if (first == "\"" && last == "\"" ) {
                 let range = Range(start: element.startIndex.successor() , end: element.endIndex.predecessor())
@@ -146,7 +128,7 @@ func cellsFromString(rowString:String) -> [String] {
 
 func recordsFromString(string: String) -> [String] {
 
-    return split("\r\n", string: string)
+    return split("\n", string: string)
 
 }
 

@@ -13,6 +13,8 @@ import CSwiftV
 
 public let newLineSeparation = "Year,Make,Model,Description,Price\r\n1997,Ford,E350,descrition,3000.00\r\n1999,Chevy,Venture,another description,4900.00\r\n"
 
+public let newLineSeparationNoCR = "Year,Make,Model,Description,Price\n1997,Ford,E350,descrition,3000.00\n1999,Chevy,Venture,another description,4900.00\n"
+
 public let newLineSeparationNoEnd = "Year,Make,Model,Description,Price\r\n1997,Ford,E350,descrition,3000.00\r\n1999,Chevy,Venture,another description,4900.00"
 
 public let withoutHeader = "1997,Ford,E350,descrition,3000.00\r\n1999,Chevy,Venture,another description,4900.00"
@@ -23,11 +25,11 @@ public let withCommasInQuotes = "Year,Make,Model,Description,Price\r\n1997,Ford,
 
 public let withQuotesInQuotes = "Year,Make,Model,Description,Price\r\n1997,Ford,\"E350\",descrition,3000.00\r\n1999,Chevy,Venture,\"another, \"\"amazing\"\", description\",4900.00"
 
-public let withNewLinesInQuotes = "Year,Make,Model,Description,Price\r\n1997,Ford,\"E350\",descrition,3000.00\r\n1999,Chevy,Venture,\"another, \"\"amazing\"\",\r\n\r\ndescription\r\n\",4900.00\r\n"
+public let withNewLinesInQuotes = "Year,Make,Model,Description,Price\n1997,Ford,\"E350\",descrition,3000.00\n1999,Chevy,Venture,\"another, \"\"amazing\"\",\n\ndescription\n\",4900.00\n"
 
 public let withTabSeparator = "Year\tMake\tModel\tDescription\tPrice\r\n1997\tFord\t\"E350\"\tdescrition\t3000.00\r\n1999\tChevy\tVenture\t\"another\t \"\"amazing\"\"\t description\"\t4900.00\r\n"
 
-public let singleString = "1999,Chevy,Venture,\"another, \"\"amazing\"\",\r\n\r\ndescription\r\n\",4900.00"
+public let singleString = "1999,Chevy,Venture,\"another, \"\"amazing\"\",\n\ndescription\n\",4900.00"
 
 class CSwiftVTests: XCTestCase {
     
@@ -44,16 +46,30 @@ class CSwiftVTests: XCTestCase {
         testString = newLineSeparation
 
         let arrayUnderTest =  CSwiftV(String: testString).rows
-        
+
         let expectedArray = [
             ["1997","Ford","E350","descrition","3000.00"],
             ["1999","Chevy","Venture","another description","4900.00"]
         ]
-        
-        XCTAssertEqual(arrayUnderTest, expectedArray)
 
+        XCTAssertEqual(arrayUnderTest, expectedArray)
+        
     }
-    
+
+    func testThatItParsesLinesSeperatedByNewLinesNoCR() {
+        testString = newLineSeparationNoCR
+
+        let arrayUnderTest =  CSwiftV(String: testString).rows
+
+        let expectedArray = [
+            ["1997","Ford","E350","descrition","3000.00"],
+            ["1999","Chevy","Venture","another description","4900.00"]
+        ]
+
+        XCTAssertEqual(arrayUnderTest, expectedArray)
+        
+    }
+
     //2.  The last record in the file may or may not have an ending line
     //break.  For example:
     
@@ -186,7 +202,7 @@ class CSwiftVTests: XCTestCase {
         
         let expectedArray = [
             ["1997","Ford","E350","descrition","3000.00"],
-            ["1999","Chevy","Venture","another, \"amazing\",\r\n\r\ndescription\r\n","4900.00"]
+            ["1999","Chevy","Venture","another, \"\"amazing\"\",\n\ndescription\n","4900.00"]
         ]
         
         XCTAssertEqual(arrayUnderTest, expectedArray)
@@ -207,7 +223,7 @@ class CSwiftVTests: XCTestCase {
         
         let expectedArray = [
             ["1997","Ford","E350","descrition","3000.00"],
-            ["1999","Chevy","Venture","another, \"amazing\", description","4900.00"]
+            ["1999","Chevy","Venture","another, \"\"amazing\"\", description","4900.00"]
         ]
         
         XCTAssertEqual(arrayUnderTest, expectedArray)
@@ -222,7 +238,7 @@ class CSwiftVTests: XCTestCase {
         
         let expectedArray = [
             ["Year":"1997","Make":"Ford","Model":"E350","Description":"descrition","Price":"3000.00"],
-            ["Year":"1999","Make":"Chevy","Model":"Venture","Description":"another, \"amazing\", description","Price":"4900.00"]
+            ["Year":"1999","Make":"Chevy","Model":"Venture","Description":"another, \"\"amazing\"\", description","Price":"4900.00"]
         ]
         
         XCTAssertEqual(arrayUnderTest, expectedArray)
@@ -237,7 +253,7 @@ class CSwiftVTests: XCTestCase {
         
         let expectedArray = [
             ["Year":"1997","Make":"Ford","Model":"E350","Description":"descrition","Price":"3000.00"],
-            ["Year":"1999","Make":"Chevy","Model":"Venture","Description":"another\t \"amazing\"\t description","Price":"4900.00"]
+            ["Year":"1999","Make":"Chevy","Model":"Venture","Description":"another\t \"\"amazing\"\"\t description","Price":"4900.00"]
         ]
         
         XCTAssertEqual(arrayUnderTest, expectedArray)
@@ -252,7 +268,7 @@ class CSwiftVTests: XCTestCase {
         let expectedArray = [
             "Year,Make,Model,Description,Price",
             "1997,Ford,\"E350\",descrition,3000.00",
-            "1999,Chevy,Venture,\"another, \"\"amazing\"\",\r\n\r\ndescription\r\n\",4900.00"
+            "1999,Chevy,Venture,\"another, \"\"amazing\"\",\n\ndescription\n\",4900.00"
         ]
 
         XCTAssertEqual(arrayUnderTest, expectedArray)
@@ -268,7 +284,7 @@ class CSwiftVTests: XCTestCase {
             "1999",
             "Chevy",
             "Venture",
-            "another, \"\"amazing\"\",\r\n\r\ndescription\r\n",
+            "another, \"\"amazing\"\",\n\ndescription\n",
             "4900.00"
         ]
 
