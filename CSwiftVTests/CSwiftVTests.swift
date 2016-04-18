@@ -301,14 +301,12 @@ class CSwiftVTests: XCTestCase {
         
         let expectedArray = [
             ["1997","Ford","","descrition","3000.00"],
-            ["1997","Ford","","descrition","3000.00"],
             ["1999","Chevy","Venture","another description",""]
         ]
         
         XCTAssertEqual(csv.rows, expectedArray)
         
         let expectedKeyedRows = [
-            ["Year":"Year", "Make": "Make", "Description":"Description", "Price":"Price"],
             ["Year":"1997", "Make": "Ford", "Description":"descrition", "Price":"3000.00"],
             ["Year":"1999", "Make": "Chevy", "Model":"Venture", "Description":"another description"]
         ]

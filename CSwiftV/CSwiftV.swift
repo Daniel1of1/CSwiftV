@@ -32,11 +32,10 @@ public class CSwiftV {
     public let rows: [[String]]
 
     public init(String string: String, separator:String = ",", headers:[String]? = nil) {
-
         var parsedLines = recordsFromString(string.stringByReplacingOccurrencesOfString("\r\n", withString: "\n")).map { cellsFromString($0, separator: separator) }
 
-        let tempHeaders = headers ?? parsedLines[0]
-
+        let tempHeaders = headers ?? parsedLines.removeFirst()
+        
         self.rows = parsedLines
 
         self.columnCount = tempHeaders.count
@@ -79,9 +78,7 @@ func cellsFromString(rowString:String, separator: String = ",") -> [String] {
 }
 
 func recordsFromString(string: String) -> [String] {
-
     return split("\n", string: string).filter { (string) -> Bool in return string.isNotEmptyOrWhitespace() }
-
 }
 
 func split(separator: String, string: String) -> [String] {

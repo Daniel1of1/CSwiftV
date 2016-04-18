@@ -38,6 +38,26 @@
                ReferencedContainer = "container:CSwiftV.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "18B665021AF7BC4B009D5195"
+               BuildableName = "CSwiftVOSXTests.xctest"
+               BlueprintName = "CSwiftVOSXTests"
+               ReferencedContainer = "container:CSwiftV.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "1878D43B19B27FB800FF84A7"
+               BuildableName = "CSwiftVTests.xctest"
+               BlueprintName = "CSwiftVTests"
+               ReferencedContainer = "container:CSwiftV.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
