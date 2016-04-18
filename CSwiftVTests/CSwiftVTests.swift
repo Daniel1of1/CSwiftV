@@ -11,6 +11,9 @@ import XCTest
 
 import CSwiftV
 
+public let emptyColumns = "Year,Make,Model,Description,Price\r\n1997,Ford,,descrition,3000.00\r\n1999,Chevy,Venture,another description,\r\n"
+
+
 public let newLineSeparation = "Year,Make,Model,Description,Price\r\n1997,Ford,E350,descrition,3000.00\r\n1999,Chevy,Venture,another description,4900.00\r\n"
 
 public let newLineSeparationNoCR = "Year,Make,Model,Description,Price\n1997,Ford,E350,descrition,3000.00\n1999,Chevy,Venture,another description,4900.00\n"
@@ -289,6 +292,28 @@ class CSwiftVTests: XCTestCase {
         ]
 
         XCTAssertEqual(arrayUnderTest, expectedArray)
+    }
+
+    func testWhenCellsAreEmpty() {
+        
+        testString = emptyColumns
+        let csv = CSwiftV(String: testString)
+        
+        let expectedArray = [
+            ["1997","Ford","","descrition","3000.00"],
+            ["1997","Ford","","descrition","3000.00"],
+            ["1999","Chevy","Venture","another description",""]
+        ]
+        
+        XCTAssertEqual(csv.rows, expectedArray)
+        
+        let expectedKeyedRows = [
+            ["Year":"Year", "Make": "Make", "Description":"Description", "Price":"Price"],
+            ["Year":"1997", "Make": "Ford", "Description":"descrition", "Price":"3000.00"],
+            ["Year":"1999", "Make": "Chevy", "Model":"Venture", "Description":"another description"]
+        ]
+        
+        XCTAssertEqual(csv.keyedRows!, expectedKeyedRows)
     }
 
     
