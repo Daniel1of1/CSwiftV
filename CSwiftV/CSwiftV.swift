@@ -44,9 +44,12 @@ public class CSwiftV {
         let keysAndRows = self.rows.map { (field :[String]) -> [String:String] in
 
             var row = [String:String]()
-
+            
             for (index, value) in field.enumerate() {
-                row[tempHeaders[index]] = value
+                //only store value which are not empty
+                if let v: String? = .Some(value) where value.isNotEmptyOrWhitespace() {
+                    row[tempHeaders[index]] = v
+                }
             }
 
             return row
