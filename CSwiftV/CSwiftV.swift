@@ -8,6 +8,21 @@
 
 import Foundation
 
+extension String {
+    func isEmptyOrWhitespace() -> Bool {
+        
+        if(self.isEmpty) {
+            return true
+        }
+        
+        return (self.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet()) == "")
+    }
+    
+    func isNotEmptyOrWhitespace() -> Bool {
+        return !isEmptyOrWhitespace()
+    }
+}
+
 //MARK: Parser
 public class CSwiftV {
 
@@ -17,11 +32,10 @@ public class CSwiftV {
     public let rows: [[String]]
 
     public init(String string: String, separator:String = ",", headers:[String]? = nil) {
-
         var parsedLines = recordsFromString(string.stringByReplacingOccurrencesOfString("\r\n", withString: "\n")).map { cellsFromString($0, separator: separator) }
 
-        let tempHeaders = headers ?? parsedLines[0]
-
+        let tempHeaders = headers ?? parsedLines.removeFirst()
+        
         self.rows = parsedLines
 
         self.columnCount = tempHeaders.count
@@ -29,9 +43,12 @@ public class CSwiftV {
         let keysAndRows = self.rows.map { (field :[String]) -> [String:String] in
 
             var row = [String:String]()
-
+            
             for (index, value) in field.enumerate() {
-                row[tempHeaders[index]] = value
+                //only store value which are not empty
+                if let v: String? = .Some(value) where value.isNotEmptyOrWhitespace() {
+                    row[tempHeaders[index]] = v
+                }
             }
 
             return row
@@ -61,9 +78,7 @@ func cellsFromString(rowString:String, separator: String = ",") -> [String] {
 }
 
 func recordsFromString(string: String) -> [String] {
-
-    return split("\n", string: string)
-
+    return split("\n", string: string).filter { (string) -> Bool in return string.isNotEmptyOrWhitespace() }
 }
 
 func split(separator: String, string: String) -> [String] {
@@ -74,7 +89,7 @@ func split(separator: String, string: String) -> [String] {
         return string.componentsSeparatedByString("\"").count % 2 == 0
     }
 
-    let merged = initial.reduce([]) { (prevArray, newString) -> [String] in
+    return initial.reduce([]) { (prevArray, newString) -> [String] in
 
         if let record = prevArray.last {
             if (oddNumberOfQuotes(record)) {
@@ -91,11 +106,4 @@ func split(separator: String, string: String) -> [String] {
         }
 
     }
-
-    let final = merged
-        .filter { (string) -> Bool in return string.characters.count > 0 }
-    
-    
-    return final
-
 }
