@@ -8,6 +8,21 @@
 
 import Foundation
 
+extension String {
+    func isEmptyOrWhitespace() -> Bool {
+        
+        if(self.isEmpty) {
+            return true
+        }
+        
+        return (self.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet()) == "")
+    }
+    
+    func isNotEmptyOrWhitespace() -> Bool {
+        return !isEmptyOrWhitespace()
+    }
+}
+
 //MARK: Parser
 public class CSwiftV {
 
@@ -62,7 +77,7 @@ func cellsFromString(rowString:String, separator: String = ",") -> [String] {
 
 func recordsFromString(string: String) -> [String] {
 
-    return split("\n", string: string)
+    return split("\n", string: string).filter { (string) -> Bool in return string.isNotEmptyOrWhitespace() }
 
 }
 
@@ -74,7 +89,7 @@ func split(separator: String, string: String) -> [String] {
         return string.componentsSeparatedByString("\"").count % 2 == 0
     }
 
-    let merged = initial.reduce([]) { (prevArray, newString) -> [String] in
+    return initial.reduce([]) { (prevArray, newString) -> [String] in
 
         if let record = prevArray.last {
             if (oddNumberOfQuotes(record)) {
@@ -91,11 +106,4 @@ func split(separator: String, string: String) -> [String] {
         }
 
     }
-
-    let final = merged
-        .filter { (string) -> Bool in return string.characters.count > 0 }
-    
-    
-    return final
-
 }
