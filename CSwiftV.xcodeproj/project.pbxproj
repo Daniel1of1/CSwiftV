@@ -33,20 +33,7 @@
 		};
 /* End PBXContainerItemProxy section */
 
-/* Begin PBXCopyFilesBuildPhase section */
-		1878D42C19B27F9E00FF84A7 /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = /usr/share/man/man1/;
-			dstSubfolderSpec = 0;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 1;
-		};
-/* End PBXCopyFilesBuildPhase section */
-
 /* Begin PBXFileReference section */
-		1878D42E19B27F9E00FF84A7 /* CSwiftV */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = CSwiftV; sourceTree = BUILT_PRODUCTS_DIR; };
 		18B664F91AF7BC4B009D5195 /* CSwiftV.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CSwiftV.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		18B665031AF7BC4B009D5195 /* CSwiftVOSXTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CSwiftVOSXTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		95B468DC1CE1D7FC009FF983 /* CSwiftV.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSwiftV.h; sourceTree = "<group>"; };
@@ -63,13 +50,6 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		1878D42B19B27F9E00FF84A7 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		18B664F51AF7BC4B009D5195 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -121,7 +101,6 @@
 		1878D42F19B27F9E00FF84A7 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				1878D42E19B27F9E00FF84A7 /* CSwiftV */,
 				18B664F91AF7BC4B009D5195 /* CSwiftV.framework */,
 				18B665031AF7BC4B009D5195 /* CSwiftVOSXTests.xctest */,
 				95B469001CE1DAD8009FF983 /* CSwiftV.framework */,
@@ -170,23 +149,6 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		1878D42D19B27F9E00FF84A7 /* CSwiftV */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 1878D43519B27F9E00FF84A7 /* Build configuration list for PBXNativeTarget "CSwiftV" */;
-			buildPhases = (
-				1878D42A19B27F9E00FF84A7 /* Sources */,
-				1878D42B19B27F9E00FF84A7 /* Frameworks */,
-				1878D42C19B27F9E00FF84A7 /* CopyFiles */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = CSwiftV;
-			productName = CSwiftV;
-			productReference = 1878D42E19B27F9E00FF84A7 /* CSwiftV */;
-			productType = "com.apple.product-type.tool";
-		};
 		18B664F81AF7BC4B009D5195 /* CSwiftVOSX */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 18B6650C1AF7BC4B009D5195 /* Build configuration list for PBXNativeTarget "CSwiftVOSX" */;
@@ -270,9 +232,6 @@
 				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = ManyThings;
 				TargetAttributes = {
-					1878D42D19B27F9E00FF84A7 = {
-						CreatedOnToolsVersion = 6.0;
-					};
 					18B664F81AF7BC4B009D5195 = {
 						CreatedOnToolsVersion = 6.3.1;
 					};
@@ -299,7 +258,6 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				1878D42D19B27F9E00FF84A7 /* CSwiftV */,
 				18B664F81AF7BC4B009D5195 /* CSwiftVOSX */,
 				18B665021AF7BC4B009D5195 /* CSwiftVOSXTests */,
 				95B468FF1CE1DAD8009FF983 /* CSwiftVIOS */,
@@ -340,13 +298,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		1878D42A19B27F9E00FF84A7 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		18B664F41AF7BC4B009D5195 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -468,20 +419,6 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
-			};
-			name = Release;
-		};
-		1878D43619B27F9E00FF84A7 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Debug;
-		};
-		1878D43719B27F9E00FF84A7 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
 		};
@@ -695,15 +632,6 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		1878D43519B27F9E00FF84A7 /* Build configuration list for PBXNativeTarget "CSwiftV" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				1878D43619B27F9E00FF84A7 /* Debug */,
-				1878D43719B27F9E00FF84A7 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		18B6650C1AF7BC4B009D5195 /* Build configuration list for PBXNativeTarget "CSwiftVOSX" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -729,6 +657,7 @@
 				95B469131CE1DAD9009FF983 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		95B469141CE1DAD9009FF983 /* Build configuration list for PBXNativeTarget "CSwiftVIOSTests" */ = {
 			isa = XCConfigurationList;
@@ -737,6 +666,7 @@
 				95B469161CE1DAD9009FF983 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
