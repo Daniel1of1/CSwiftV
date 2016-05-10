@@ -37,7 +37,7 @@ class CSwiftVTests: XCTestCase {
 
     lazy var nativeSwiftStringCSV: String = {
         var string = "Timestamp,Number1,Number2"
-        for _ in 1...100_000 {
+        for _ in 1...10_000 {
             string += ("20150101000100,100,0\n")
         }
         return string
