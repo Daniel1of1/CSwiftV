@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "1878D42D19B27F9E00FF84A7"
-               BuildableName = "CSwiftV"
-               BlueprintName = "CSwiftV"
+               BlueprintIdentifier = "6E8818101CE274A300912B26"
+               BuildableName = "CswiftVTVOS.framework"
+               BlueprintName = "CswiftVTVOS"
                ReferencedContainer = "container:CSwiftV.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -28,13 +28,23 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "6E8818191CE274A300912B26"
+               BuildableName = "CswiftVTVOSTests.xctest"
+               BlueprintName = "CswiftVTVOSTests"
+               ReferencedContainer = "container:CSwiftV.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "1878D42D19B27F9E00FF84A7"
-            BuildableName = "CSwiftV"
-            BlueprintName = "CSwiftV"
+            BlueprintIdentifier = "6E8818101CE274A300912B26"
+            BuildableName = "CswiftVTVOS.framework"
+            BlueprintName = "CswiftVTVOS"
             ReferencedContainer = "container:CSwiftV.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -51,16 +61,15 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "1878D42D19B27F9E00FF84A7"
-            BuildableName = "CSwiftV"
-            BlueprintName = "CSwiftV"
+            BlueprintIdentifier = "6E8818101CE274A300912B26"
+            BuildableName = "CswiftVTVOS.framework"
+            BlueprintName = "CswiftVTVOS"
             ReferencedContainer = "container:CSwiftV.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -70,16 +79,15 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "1878D42D19B27F9E00FF84A7"
-            BuildableName = "CSwiftV"
-            BlueprintName = "CSwiftV"
+            BlueprintIdentifier = "6E8818101CE274A300912B26"
+            BuildableName = "CswiftVTVOS.framework"
+            BlueprintName = "CswiftVTVOS"
             ReferencedContainer = "container:CSwiftV.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">
