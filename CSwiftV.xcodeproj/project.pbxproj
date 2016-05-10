@@ -3,22 +3,17 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 47;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1878D44119B27FB800FF84A7 /* CSwiftVTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1878D44019B27FB800FF84A7 /* CSwiftVTests.swift */; };
-		1878D44819B2896700FF84A7 /* CSwiftV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1878D44719B2896700FF84A7 /* CSwiftV.swift */; };
-		188E206719BE5CF5008F6C60 /* CSwiftV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1878D44719B2896700FF84A7 /* CSwiftV.swift */; };
-		18B664FE1AF7BC4B009D5195 /* CSwiftVOSX.h in Headers */ = {isa = PBXBuildFile; fileRef = 18B664FD1AF7BC4B009D5195 /* CSwiftVOSX.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		18B665041AF7BC4B009D5195 /* CSwiftVOSX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18B664F91AF7BC4B009D5195 /* CSwiftVOSX.framework */; };
-		18B6650B1AF7BC4B009D5195 /* CSwiftVOSXTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B6650A1AF7BC4B009D5195 /* CSwiftVOSXTests.swift */; };
-		18B6651C1AF7BC5C009D5195 /* CSwiftVIOS.h in Headers */ = {isa = PBXBuildFile; fileRef = 18B6651B1AF7BC5C009D5195 /* CSwiftVIOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		18B665221AF7BC5C009D5195 /* CSwiftVIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18B665171AF7BC5C009D5195 /* CSwiftVIOS.framework */; };
-		18B665291AF7BC5C009D5195 /* CSwiftVIOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B665281AF7BC5C009D5195 /* CSwiftVIOSTests.swift */; };
-		18B665301AF7BC62009D5195 /* CSwiftV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1878D44719B2896700FF84A7 /* CSwiftV.swift */; };
-		18B665311AF7BC63009D5195 /* CSwiftV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1878D44719B2896700FF84A7 /* CSwiftV.swift */; };
-		18C131E919BA506C001FBE9E /* SampleCSVStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C131E819BA506C001FBE9E /* SampleCSVStrings.swift */; };
+		18B665041AF7BC4B009D5195 /* CSwiftV.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18B664F91AF7BC4B009D5195 /* CSwiftV.framework */; };
+		95B468DF1CE1D7FC009FF983 /* CSwiftV.h in Headers */ = {isa = PBXBuildFile; fileRef = 95B468DC1CE1D7FC009FF983 /* CSwiftV.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		95B468E11CE1D7FC009FF983 /* CSwiftV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B468DD1CE1D7FC009FF983 /* CSwiftV.swift */; };
+		95B468E81CE1D813009FF983 /* CSwiftVTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B468E61CE1D813009FF983 /* CSwiftVTests.swift */; };
+		95B4690A1CE1DAD9009FF983 /* CSwiftV.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95B469001CE1DAD8009FF983 /* CSwiftV.framework */; };
+		95B469171CE1DB6D009FF983 /* CSwiftV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B468DD1CE1D7FC009FF983 /* CSwiftV.swift */; };
+		95B469181CE1DB70009FF983 /* CSwiftVTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B468E61CE1D813009FF983 /* CSwiftVTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,11 +24,11 @@
 			remoteGlobalIDString = 18B664F81AF7BC4B009D5195;
 			remoteInfo = CSwiftVOSX;
 		};
-		18B665231AF7BC5C009D5195 /* PBXContainerItemProxy */ = {
+		95B4690B1CE1DAD9009FF983 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 1878D42619B27F9E00FF84A7 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 18B665161AF7BC5C009D5195;
+			remoteGlobalIDString = 95B468FF1CE1DAD8009FF983;
 			remoteInfo = CSwiftVIOS;
 		};
 /* End PBXContainerItemProxy section */
@@ -52,34 +47,23 @@
 
 /* Begin PBXFileReference section */
 		1878D42E19B27F9E00FF84A7 /* CSwiftV */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = CSwiftV; sourceTree = BUILT_PRODUCTS_DIR; };
-		1878D43C19B27FB800FF84A7 /* CSwiftVTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CSwiftVTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		1878D43F19B27FB800FF84A7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1878D44019B27FB800FF84A7 /* CSwiftVTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSwiftVTests.swift; sourceTree = "<group>"; };
-		1878D44719B2896700FF84A7 /* CSwiftV.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSwiftV.swift; sourceTree = "<group>"; };
-		18B664F91AF7BC4B009D5195 /* CSwiftVOSX.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CSwiftVOSX.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		18B664FC1AF7BC4B009D5195 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		18B664FD1AF7BC4B009D5195 /* CSwiftVOSX.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CSwiftVOSX.h; sourceTree = "<group>"; };
+		18B664F91AF7BC4B009D5195 /* CSwiftV.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CSwiftV.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		18B665031AF7BC4B009D5195 /* CSwiftVOSXTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CSwiftVOSXTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		18B665091AF7BC4B009D5195 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		18B6650A1AF7BC4B009D5195 /* CSwiftVOSXTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSwiftVOSXTests.swift; sourceTree = "<group>"; };
-		18B665171AF7BC5C009D5195 /* CSwiftVIOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CSwiftVIOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		18B6651A1AF7BC5C009D5195 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		18B6651B1AF7BC5C009D5195 /* CSwiftVIOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CSwiftVIOS.h; sourceTree = "<group>"; };
-		18B665211AF7BC5C009D5195 /* CSwiftVIOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CSwiftVIOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		18B665271AF7BC5C009D5195 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		18B665281AF7BC5C009D5195 /* CSwiftVIOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSwiftVIOSTests.swift; sourceTree = "<group>"; };
-		18C131E819BA506C001FBE9E /* SampleCSVStrings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SampleCSVStrings.swift; sourceTree = "<group>"; };
+		95B468DC1CE1D7FC009FF983 /* CSwiftV.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSwiftV.h; sourceTree = "<group>"; };
+		95B468DD1CE1D7FC009FF983 /* CSwiftV.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSwiftV.swift; sourceTree = "<group>"; };
+		95B468DE1CE1D7FC009FF983 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		95B468E61CE1D813009FF983 /* CSwiftVTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSwiftVTests.swift; sourceTree = "<group>"; };
+		95B468E71CE1D813009FF983 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		95B469001CE1DAD8009FF983 /* CSwiftV.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CSwiftV.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		95B469091CE1DAD9009FF983 /* CSwiftVIOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CSwiftVIOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		95B469221CE20DFA009FF983 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		95B469231CE20DFA009FF983 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		95B469241CE20E09009FF983 /* CSwiftV.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = CSwiftV.podspec; sourceTree = "<group>"; };
+		95B469251CE20E12009FF983 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		1878D42B19B27F9E00FF84A7 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		1878D43919B27FB800FF84A7 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -97,22 +81,22 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				18B665041AF7BC4B009D5195 /* CSwiftVOSX.framework in Frameworks */,
+				18B665041AF7BC4B009D5195 /* CSwiftV.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		18B665131AF7BC5C009D5195 /* Frameworks */ = {
+		95B468FC1CE1DAD8009FF983 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		18B6651E1AF7BC5C009D5195 /* Frameworks */ = {
+		95B469061CE1DAD9009FF983 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				18B665221AF7BC5C009D5195 /* CSwiftVIOS.framework in Frameworks */,
+				95B4690A1CE1DAD9009FF983 /* CSwiftV.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -122,121 +106,47 @@
 		1878D42519B27F9E00FF84A7 = {
 			isa = PBXGroup;
 			children = (
-				1878D43019B27F9E00FF84A7 /* CSwiftV */,
-				1878D43D19B27FB800FF84A7 /* CSwiftVTests */,
-				18B664FA1AF7BC4B009D5195 /* CSwiftVOSX */,
-				18B665071AF7BC4B009D5195 /* CSwiftVOSXTests */,
-				18B665181AF7BC5C009D5195 /* CSwiftVIOS */,
-				18B665251AF7BC5C009D5195 /* CSwiftVIOSTests */,
+				95B469221CE20DFA009FF983 /* LICENSE */,
+				95B469231CE20DFA009FF983 /* README.md */,
+				95B469241CE20E09009FF983 /* CSwiftV.podspec */,
+				95B469251CE20E12009FF983 /* .gitignore */,
+				95B468DB1CE1D7FC009FF983 /* Sources */,
+				95B468E51CE1D813009FF983 /* Tests */,
 				1878D42F19B27F9E00FF84A7 /* Products */,
 			);
+			indentWidth = 4;
 			sourceTree = "<group>";
+			tabWidth = 4;
 		};
 		1878D42F19B27F9E00FF84A7 /* Products */ = {
 			isa = PBXGroup;
 			children = (
 				1878D42E19B27F9E00FF84A7 /* CSwiftV */,
-				1878D43C19B27FB800FF84A7 /* CSwiftVTests.xctest */,
-				18B664F91AF7BC4B009D5195 /* CSwiftVOSX.framework */,
+				18B664F91AF7BC4B009D5195 /* CSwiftV.framework */,
 				18B665031AF7BC4B009D5195 /* CSwiftVOSXTests.xctest */,
-				18B665171AF7BC5C009D5195 /* CSwiftVIOS.framework */,
-				18B665211AF7BC5C009D5195 /* CSwiftVIOSTests.xctest */,
+				95B469001CE1DAD8009FF983 /* CSwiftV.framework */,
+				95B469091CE1DAD9009FF983 /* CSwiftVIOSTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		1878D43019B27F9E00FF84A7 /* CSwiftV */ = {
+		95B468DB1CE1D7FC009FF983 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				1878D44719B2896700FF84A7 /* CSwiftV.swift */,
+				95B468DD1CE1D7FC009FF983 /* CSwiftV.swift */,
+				95B468DC1CE1D7FC009FF983 /* CSwiftV.h */,
+				95B468DE1CE1D7FC009FF983 /* Info.plist */,
 			);
-			path = CSwiftV;
+			path = Sources;
 			sourceTree = "<group>";
 		};
-		1878D43D19B27FB800FF84A7 /* CSwiftVTests */ = {
+		95B468E51CE1D813009FF983 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				1878D44019B27FB800FF84A7 /* CSwiftVTests.swift */,
-				18C131E819BA506C001FBE9E /* SampleCSVStrings.swift */,
-				1878D43E19B27FB800FF84A7 /* Supporting Files */,
+				95B468E61CE1D813009FF983 /* CSwiftVTests.swift */,
+				95B468E71CE1D813009FF983 /* Info.plist */,
 			);
-			path = CSwiftVTests;
-			sourceTree = "<group>";
-		};
-		1878D43E19B27FB800FF84A7 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				1878D43F19B27FB800FF84A7 /* Info.plist */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		18B664FA1AF7BC4B009D5195 /* CSwiftVOSX */ = {
-			isa = PBXGroup;
-			children = (
-				18B664FD1AF7BC4B009D5195 /* CSwiftVOSX.h */,
-				18B664FB1AF7BC4B009D5195 /* Supporting Files */,
-			);
-			path = CSwiftVOSX;
-			sourceTree = "<group>";
-		};
-		18B664FB1AF7BC4B009D5195 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				18B664FC1AF7BC4B009D5195 /* Info.plist */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		18B665071AF7BC4B009D5195 /* CSwiftVOSXTests */ = {
-			isa = PBXGroup;
-			children = (
-				18B6650A1AF7BC4B009D5195 /* CSwiftVOSXTests.swift */,
-				18B665081AF7BC4B009D5195 /* Supporting Files */,
-			);
-			path = CSwiftVOSXTests;
-			sourceTree = "<group>";
-		};
-		18B665081AF7BC4B009D5195 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				18B665091AF7BC4B009D5195 /* Info.plist */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		18B665181AF7BC5C009D5195 /* CSwiftVIOS */ = {
-			isa = PBXGroup;
-			children = (
-				18B6651B1AF7BC5C009D5195 /* CSwiftVIOS.h */,
-				18B665191AF7BC5C009D5195 /* Supporting Files */,
-			);
-			path = CSwiftVIOS;
-			sourceTree = "<group>";
-		};
-		18B665191AF7BC5C009D5195 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				18B6651A1AF7BC5C009D5195 /* Info.plist */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		18B665251AF7BC5C009D5195 /* CSwiftVIOSTests */ = {
-			isa = PBXGroup;
-			children = (
-				18B665281AF7BC5C009D5195 /* CSwiftVIOSTests.swift */,
-				18B665261AF7BC5C009D5195 /* Supporting Files */,
-			);
-			path = CSwiftVIOSTests;
-			sourceTree = "<group>";
-		};
-		18B665261AF7BC5C009D5195 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				18B665271AF7BC5C009D5195 /* Info.plist */,
-			);
-			name = "Supporting Files";
+			path = Tests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -246,15 +156,14 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				18B664FE1AF7BC4B009D5195 /* CSwiftVOSX.h in Headers */,
+				95B468DF1CE1D7FC009FF983 /* CSwiftV.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		18B665141AF7BC5C009D5195 /* Headers */ = {
+		95B468FD1CE1DAD8009FF983 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				18B6651C1AF7BC5C009D5195 /* CSwiftVIOS.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -278,23 +187,6 @@
 			productReference = 1878D42E19B27F9E00FF84A7 /* CSwiftV */;
 			productType = "com.apple.product-type.tool";
 		};
-		1878D43B19B27FB800FF84A7 /* CSwiftVTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 1878D44219B27FB800FF84A7 /* Build configuration list for PBXNativeTarget "CSwiftVTests" */;
-			buildPhases = (
-				1878D43819B27FB800FF84A7 /* Sources */,
-				1878D43919B27FB800FF84A7 /* Frameworks */,
-				1878D43A19B27FB800FF84A7 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = CSwiftVTests;
-			productName = CSwiftVTests;
-			productReference = 1878D43C19B27FB800FF84A7 /* CSwiftVTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 		18B664F81AF7BC4B009D5195 /* CSwiftVOSX */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 18B6650C1AF7BC4B009D5195 /* Build configuration list for PBXNativeTarget "CSwiftVOSX" */;
@@ -310,7 +202,7 @@
 			);
 			name = CSwiftVOSX;
 			productName = CSwiftVOSX;
-			productReference = 18B664F91AF7BC4B009D5195 /* CSwiftVOSX.framework */;
+			productReference = 18B664F91AF7BC4B009D5195 /* CSwiftV.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		18B665021AF7BC4B009D5195 /* CSwiftVOSXTests */ = {
@@ -331,14 +223,14 @@
 			productReference = 18B665031AF7BC4B009D5195 /* CSwiftVOSXTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		18B665161AF7BC5C009D5195 /* CSwiftVIOS */ = {
+		95B468FF1CE1DAD8009FF983 /* CSwiftVIOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 18B6652A1AF7BC5C009D5195 /* Build configuration list for PBXNativeTarget "CSwiftVIOS" */;
+			buildConfigurationList = 95B469111CE1DAD9009FF983 /* Build configuration list for PBXNativeTarget "CSwiftVIOS" */;
 			buildPhases = (
-				18B665121AF7BC5C009D5195 /* Sources */,
-				18B665131AF7BC5C009D5195 /* Frameworks */,
-				18B665141AF7BC5C009D5195 /* Headers */,
-				18B665151AF7BC5C009D5195 /* Resources */,
+				95B468FB1CE1DAD8009FF983 /* Sources */,
+				95B468FC1CE1DAD8009FF983 /* Frameworks */,
+				95B468FD1CE1DAD8009FF983 /* Headers */,
+				95B468FE1CE1DAD8009FF983 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -346,25 +238,25 @@
 			);
 			name = CSwiftVIOS;
 			productName = CSwiftVIOS;
-			productReference = 18B665171AF7BC5C009D5195 /* CSwiftVIOS.framework */;
+			productReference = 95B469001CE1DAD8009FF983 /* CSwiftV.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		18B665201AF7BC5C009D5195 /* CSwiftVIOSTests */ = {
+		95B469081CE1DAD9009FF983 /* CSwiftVIOSTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 18B6652D1AF7BC5C009D5195 /* Build configuration list for PBXNativeTarget "CSwiftVIOSTests" */;
+			buildConfigurationList = 95B469141CE1DAD9009FF983 /* Build configuration list for PBXNativeTarget "CSwiftVIOSTests" */;
 			buildPhases = (
-				18B6651D1AF7BC5C009D5195 /* Sources */,
-				18B6651E1AF7BC5C009D5195 /* Frameworks */,
-				18B6651F1AF7BC5C009D5195 /* Resources */,
+				95B469051CE1DAD9009FF983 /* Sources */,
+				95B469061CE1DAD9009FF983 /* Frameworks */,
+				95B469071CE1DAD9009FF983 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				18B665241AF7BC5C009D5195 /* PBXTargetDependency */,
+				95B4690C1CE1DAD9009FF983 /* PBXTargetDependency */,
 			);
 			name = CSwiftVIOSTests;
 			productName = CSwiftVIOSTests;
-			productReference = 18B665211AF7BC5C009D5195 /* CSwiftVIOSTests.xctest */;
+			productReference = 95B469091CE1DAD9009FF983 /* CSwiftVIOSTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -374,14 +266,11 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftMigration = 0720;
-				LastSwiftUpdateCheck = 0720;
-				LastUpgradeCheck = 0600;
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = ManyThings;
 				TargetAttributes = {
 					1878D42D19B27F9E00FF84A7 = {
-						CreatedOnToolsVersion = 6.0;
-					};
-					1878D43B19B27FB800FF84A7 = {
 						CreatedOnToolsVersion = 6.0;
 					};
 					18B664F81AF7BC4B009D5195 = {
@@ -390,16 +279,16 @@
 					18B665021AF7BC4B009D5195 = {
 						CreatedOnToolsVersion = 6.3.1;
 					};
-					18B665161AF7BC5C009D5195 = {
-						CreatedOnToolsVersion = 6.3.1;
+					95B468FF1CE1DAD8009FF983 = {
+						CreatedOnToolsVersion = 7.3.1;
 					};
-					18B665201AF7BC5C009D5195 = {
-						CreatedOnToolsVersion = 6.3.1;
+					95B469081CE1DAD9009FF983 = {
+						CreatedOnToolsVersion = 7.3.1;
 					};
 				};
 			};
 			buildConfigurationList = 1878D42919B27F9E00FF84A7 /* Build configuration list for PBXProject "CSwiftV" */;
-			compatibilityVersion = "Xcode 3.2";
+			compatibilityVersion = "Xcode 6.3";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -411,23 +300,15 @@
 			projectRoot = "";
 			targets = (
 				1878D42D19B27F9E00FF84A7 /* CSwiftV */,
-				1878D43B19B27FB800FF84A7 /* CSwiftVTests */,
 				18B664F81AF7BC4B009D5195 /* CSwiftVOSX */,
 				18B665021AF7BC4B009D5195 /* CSwiftVOSXTests */,
-				18B665161AF7BC5C009D5195 /* CSwiftVIOS */,
-				18B665201AF7BC5C009D5195 /* CSwiftVIOSTests */,
+				95B468FF1CE1DAD8009FF983 /* CSwiftVIOS */,
+				95B469081CE1DAD9009FF983 /* CSwiftVIOSTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		1878D43A19B27FB800FF84A7 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		18B664F71AF7BC4B009D5195 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -442,14 +323,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		18B665151AF7BC5C009D5195 /* Resources */ = {
+		95B468FE1CE1DAD8009FF983 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		18B6651F1AF7BC5C009D5195 /* Resources */ = {
+		95B469071CE1DAD9009FF983 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -463,17 +344,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1878D44819B2896700FF84A7 /* CSwiftV.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		1878D43819B27FB800FF84A7 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				1878D44119B27FB800FF84A7 /* CSwiftVTests.swift in Sources */,
-				188E206719BE5CF5008F6C60 /* CSwiftV.swift in Sources */,
-				18C131E919BA506C001FBE9E /* SampleCSVStrings.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -481,7 +351,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				18B665301AF7BC62009D5195 /* CSwiftV.swift in Sources */,
+				95B468E11CE1D7FC009FF983 /* CSwiftV.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -489,23 +359,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				18B6650B1AF7BC4B009D5195 /* CSwiftVOSXTests.swift in Sources */,
+				95B468E81CE1D813009FF983 /* CSwiftVTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		18B665121AF7BC5C009D5195 /* Sources */ = {
+		95B468FB1CE1DAD8009FF983 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				18B665311AF7BC63009D5195 /* CSwiftV.swift in Sources */,
+				95B469171CE1DB6D009FF983 /* CSwiftV.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		18B6651D1AF7BC5C009D5195 /* Sources */ = {
+		95B469051CE1DAD9009FF983 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				18B665291AF7BC5C009D5195 /* CSwiftVIOSTests.swift in Sources */,
+				95B469181CE1DB70009FF983 /* CSwiftVTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -517,10 +387,10 @@
 			target = 18B664F81AF7BC4B009D5195 /* CSwiftVOSX */;
 			targetProxy = 18B665051AF7BC4B009D5195 /* PBXContainerItemProxy */;
 		};
-		18B665241AF7BC5C009D5195 /* PBXTargetDependency */ = {
+		95B4690C1CE1DAD9009FF983 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 18B665161AF7BC5C009D5195 /* CSwiftVIOS */;
-			targetProxy = 18B665231AF7BC5C009D5195 /* PBXContainerItemProxy */;
+			target = 95B468FF1CE1DAD8009FF983 /* CSwiftVIOS */;
+			targetProxy = 95B4690B1CE1DAD9009FF983 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -544,6 +414,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -614,43 +485,12 @@
 			};
 			name = Release;
 		};
-		1878D44319B27FB800FF84A7 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = CSwiftVTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = macosx;
-			};
-			name = Debug;
-		};
-		1878D44419B27FB800FF84A7 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = CSwiftVTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = macosx;
-			};
-			name = Release;
-		};
 		18B6650D1AF7BC4B009D5195 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "compiler-default";
+				CLANG_CXX_LIBRARY = "compiler-default";
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = dwarf;
@@ -659,16 +499,20 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				FRAMEWORK_VERSION = A;
+				GCC_C_LANGUAGE_STANDARD = "compiler-default";
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = CSwiftVOSX/Info.plist;
+				INFOPLIST_FILE = Sources/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MODULE_NAME = CSwiftV;
+				PRODUCT_BUNDLE_IDENTIFIER = io.manythings.CSwiftVOSX;
+				PRODUCT_MODULE_NAME = CSwiftV;
+				PRODUCT_NAME = CSwiftV;
 				SKIP_INSTALL = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -678,6 +522,9 @@
 		18B6650E1AF7BC4B009D5195 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "compiler-default";
+				CLANG_CXX_LIBRARY = "compiler-default";
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
@@ -686,12 +533,16 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				FRAMEWORK_VERSION = A;
+				GCC_C_LANGUAGE_STANDARD = "compiler-default";
 				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = CSwiftVOSX/Info.plist;
+				INFOPLIST_FILE = Sources/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MODULE_NAME = CSwiftV;
+				PRODUCT_BUNDLE_IDENTIFIER = io.manythings.CSwiftVOSX;
+				PRODUCT_MODULE_NAME = CSwiftV;
+				PRODUCT_NAME = CSwiftV;
 				SKIP_INSTALL = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -701,20 +552,24 @@
 		18B665101AF7BC4B009D5195 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "compiler-default";
+				CLANG_CXX_LIBRARY = "compiler-default";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 					"$(inherited)",
 				);
+				GCC_C_LANGUAGE_STANDARD = "compiler-default";
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = CSwiftVOSXTests/Info.plist;
+				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				PRODUCT_BUNDLE_IDENTIFIER = "io.manythings.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -722,40 +577,43 @@
 		18B665111AF7BC4B009D5195 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "compiler-default";
+				CLANG_CXX_LIBRARY = "compiler-default";
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 					"$(inherited)",
 				);
+				GCC_C_LANGUAGE_STANDARD = "compiler-default";
 				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = CSwiftVOSXTests/Info.plist;
+				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				PRODUCT_BUNDLE_IDENTIFIER = "io.manythings.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
 		};
-		18B6652B1AF7BC5C009D5195 /* Debug */ = {
+		95B469121CE1DAD9009FF983 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = CSwiftVIOS/Info.plist;
+				INFOPLIST_FILE = Sources/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = io.manythings.CSwiftVIOS;
+				PRODUCT_MODULE_NAME = CSwiftV;
+				PRODUCT_NAME = CSwiftV;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -764,9 +622,10 @@
 			};
 			name = Debug;
 		};
-		18B6652C1AF7BC5C009D5195 /* Release */ = {
+		95B469131CE1DAD9009FF983 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
@@ -775,11 +634,13 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = CSwiftVIOS/Info.plist;
+				INFOPLIST_FILE = Sources/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = io.manythings.CSwiftVIOS;
+				PRODUCT_MODULE_NAME = CSwiftV;
+				PRODUCT_NAME = CSwiftV;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -789,41 +650,33 @@
 			};
 			name = Release;
 		};
-		18B6652E1AF7BC5C009D5195 /* Debug */ = {
+		95B469151CE1DAD9009FF983 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
+				DEBUG_INFORMATION_FORMAT = dwarf;
 				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = CSwiftVIOSTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				INFOPLIST_FILE = Tests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = io.manythings.CSwiftVIOSTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
 		};
-		18B6652F1AF7BC5C009D5195 /* Release */ = {
+		95B469161CE1DAD9009FF983 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
 				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = CSwiftVIOSTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				INFOPLIST_FILE = Tests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = io.manythings.CSwiftVIOSTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -851,15 +704,6 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		1878D44219B27FB800FF84A7 /* Build configuration list for PBXNativeTarget "CSwiftVTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				1878D44319B27FB800FF84A7 /* Debug */,
-				1878D44419B27FB800FF84A7 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		18B6650C1AF7BC4B009D5195 /* Build configuration list for PBXNativeTarget "CSwiftVOSX" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -878,23 +722,21 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		18B6652A1AF7BC5C009D5195 /* Build configuration list for PBXNativeTarget "CSwiftVIOS" */ = {
+		95B469111CE1DAD9009FF983 /* Build configuration list for PBXNativeTarget "CSwiftVIOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				18B6652B1AF7BC5C009D5195 /* Debug */,
-				18B6652C1AF7BC5C009D5195 /* Release */,
+				95B469121CE1DAD9009FF983 /* Debug */,
+				95B469131CE1DAD9009FF983 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
 		};
-		18B6652D1AF7BC5C009D5195 /* Build configuration list for PBXNativeTarget "CSwiftVIOSTests" */ = {
+		95B469141CE1DAD9009FF983 /* Build configuration list for PBXNativeTarget "CSwiftVIOSTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				18B6652E1AF7BC5C009D5195 /* Debug */,
-				18B6652F1AF7BC5C009D5195 /* Release */,
+				95B469151CE1DAD9009FF983 /* Debug */,
+				95B469161CE1DAD9009FF983 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
