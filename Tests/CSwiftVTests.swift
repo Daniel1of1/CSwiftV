@@ -9,10 +9,9 @@
 import Foundation
 import XCTest
 
-import CSwiftV
+@testable import CSwiftV
 
 public let emptyColumns = "Year,Make,Model,Description,Price\r\n1997,Ford,,descrition,3000.00\r\n1999,Chevy,Venture,another description,\r\n"
-
 
 public let newLineSeparation = "Year,Make,Model,Description,Price\r\n1997,Ford,E350,descrition,3000.00\r\n1999,Chevy,Venture,another description,4900.00\r\n"
 
@@ -35,7 +34,15 @@ public let withTabSeparator = "Year\tMake\tModel\tDescription\tPrice\r\n1997\tFo
 public let singleString = "1999,Chevy,Venture,\"another, \"\"amazing\"\",\n\ndescription\n\",4900.00"
 
 class CSwiftVTests: XCTestCase {
-    
+
+    lazy var nativeSwiftStringCSV: String = {
+        var string = "Timestamp,Number1,Number2"
+        for _ in 1...100_000 {
+            string += ("20150101000100,100,0\n")
+        }
+        return string
+    }()
+
     var testString: String!
 
    // modelling from http://tools.ietf.org/html/rfc4180#section-2
@@ -48,7 +55,7 @@ class CSwiftVTests: XCTestCase {
     func testThatItParsesLinesSeperatedByNewLines() {
         testString = newLineSeparation
 
-        let arrayUnderTest =  CSwiftV(String: testString).rows
+        let arrayUnderTest =  CSwiftV(string: testString).rows
 
         let expectedArray = [
             ["1997","Ford","E350","descrition","3000.00"],
@@ -62,7 +69,7 @@ class CSwiftVTests: XCTestCase {
     func testThatItParsesLinesSeperatedByNewLinesNoCR() {
         testString = newLineSeparationNoCR
 
-        let arrayUnderTest =  CSwiftV(String: testString).rows
+        let arrayUnderTest =  CSwiftV(string: testString).rows
 
         let expectedArray = [
             ["1997","Ford","E350","descrition","3000.00"],
@@ -83,7 +90,7 @@ class CSwiftVTests: XCTestCase {
 
         testString = newLineSeparationNoEnd
         
-        let arrayUnderTest =  CSwiftV(String: testString).rows
+        let arrayUnderTest =  CSwiftV(string: testString).rows
         
         let expectedArray = [
             ["1997","Ford","E350","descrition","3000.00"],
@@ -109,7 +116,7 @@ class CSwiftVTests: XCTestCase {
         
         testString = newLineSeparationNoEnd
         
-        let arrayUnderTest : [String] =  CSwiftV(String: testString).headers
+        let arrayUnderTest : [String] =  CSwiftV(string: testString).headers
         
         let expectedArray = ["Year","Make","Model","Description","Price"]
         
@@ -128,7 +135,7 @@ class CSwiftVTests: XCTestCase {
         
         testString = withoutHeader
         
-        let arrayUnderTest = CSwiftV(String: testString, separator:",", headers:["Year","Make","Model","Description","Price"]).rows
+        let arrayUnderTest = CSwiftV(string: testString, separator:",", headers:["Year","Make","Model","Description","Price"]).rows
         
         //XCTAssertNil(arrayUnderTest)
         
@@ -164,7 +171,7 @@ class CSwiftVTests: XCTestCase {
         
         testString = withRandomQuotes
         
-        let arrayUnderTest =  CSwiftV(String: testString).rows
+        let arrayUnderTest =  CSwiftV(string: testString).rows
         
         let expectedArray = [
             ["1997","Ford","E350","descrition","3000.00"],
@@ -186,7 +193,7 @@ class CSwiftVTests: XCTestCase {
         
         testString = withCommasInQuotes
         
-        let arrayUnderTest =  CSwiftV(String: testString).rows
+        let arrayUnderTest =  CSwiftV(string: testString).rows
         
         let expectedArray = [
             ["1997","Ford","E350","descrition","3000.00"],
@@ -201,7 +208,7 @@ class CSwiftVTests: XCTestCase {
         
         testString = withNewLinesInQuotes
         
-        let arrayUnderTest =  CSwiftV(String: testString).rows
+        let arrayUnderTest =  CSwiftV(string: testString).rows
         
         let expectedArray = [
             ["1997","Ford","E350","descrition","3000.00"],
@@ -222,7 +229,7 @@ class CSwiftVTests: XCTestCase {
         
         testString = withQuotesInQuotes
         
-        let arrayUnderTest =  CSwiftV(String: testString).rows
+        let arrayUnderTest =  CSwiftV(string: testString).rows
         
         let expectedArray = [
             ["1997","Ford","E350","descrition","3000.00"],
@@ -237,7 +244,7 @@ class CSwiftVTests: XCTestCase {
         
         testString = withQuotesInQuotes
         
-        let arrayUnderTest =  CSwiftV(String: testString).keyedRows!
+        let arrayUnderTest =  CSwiftV(string: testString).keyedRows!
         
         let expectedArray = [
             ["Year":"1997","Make":"Ford","Model":"E350","Description":"descrition","Price":"3000.00"],
@@ -252,7 +259,7 @@ class CSwiftVTests: XCTestCase {
         
         testString = withTabSeparator
         
-        let arrayUnderTest =  CSwiftV(String: testString, separator:"\t").keyedRows!
+        let arrayUnderTest =  CSwiftV(string: testString, separator:"\t").keyedRows!
         
         let expectedArray = [
             ["Year":"1997","Make":"Ford","Model":"E350","Description":"descrition","Price":"3000.00"],
@@ -266,7 +273,7 @@ class CSwiftVTests: XCTestCase {
     func testThatItCanGetCellsFromAstring() {
         testString = withNewLinesInQuotes
 
-        let arrayUnderTest =  recordsFromString(testString)
+        let arrayUnderTest = CSwiftV.recordsFromString(testString)
 
         let expectedArray = [
             "Year,Make,Model,Description,Price",
@@ -281,7 +288,7 @@ class CSwiftVTests: XCTestCase {
     func testThatItCanGetCells() {
         testString = singleString
 
-        let arrayUnderTest =  cellsFromString(testString)
+        let arrayUnderTest = CSwiftV.cellsFromString(testString)
 
         let expectedArray = [
             "1999",
@@ -297,7 +304,7 @@ class CSwiftVTests: XCTestCase {
     func testWhenCellsAreEmpty() {
         
         testString = emptyColumns
-        let csv = CSwiftV(String: testString)
+        let csv = CSwiftV(string: testString)
         
         let expectedArray = [
             ["1997","Ford","","descrition","3000.00"],
@@ -314,5 +321,11 @@ class CSwiftVTests: XCTestCase {
         XCTAssertEqual(csv.keyedRows!, expectedKeyedRows)
     }
 
-    
+    func testPerformance() {
+        let testString = nativeSwiftStringCSV
+        measureBlock {
+            let _ = CSwiftV(string: testString)
+        }
+    }
+
 }
