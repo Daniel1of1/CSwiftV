@@ -20,7 +20,7 @@ Pod::Spec.new do |s|
 
   s.source = { :git => "https://github.com/daniel1of1/CSwiftV.git", :tag => s.version }
 
-  s.source_files  = "CSwiftV/CSwiftV.swift"
+  s.source_files  = "Sources/CSwiftV.swift"
 
   s.requires_arc = true
 
