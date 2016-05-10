@@ -856,6 +856,7 @@
 				6E8818231CE274A300912B26 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6E8818271CE274A300912B26 /* Build configuration list for PBXNativeTarget "CswiftVTVOSTests" */ = {
 			isa = XCConfigurationList;
@@ -864,6 +865,7 @@
 				6E8818251CE274A300912B26 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		95B469111CE1DAD9009FF983 /* Build configuration list for PBXNativeTarget "CSwiftVIOS" */ = {
 			isa = XCConfigurationList;
