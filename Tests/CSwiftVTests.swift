@@ -273,7 +273,7 @@ class CSwiftVTests: XCTestCase {
     func testThatItCanGetCellsFromAstring() {
         testString = withNewLinesInQuotes
 
-        let arrayUnderTest = CSwiftV.recordsFromString(testString)
+        let arrayUnderTest = CSwiftV.recordsFromString(string: testString)
 
         let expectedArray = [
             "Year,Make,Model,Description,Price",
@@ -288,7 +288,7 @@ class CSwiftVTests: XCTestCase {
     func testThatItCanGetCells() {
         testString = singleString
 
-        let arrayUnderTest = CSwiftV.cellsFromString(testString)
+        let arrayUnderTest = CSwiftV.cellsFromString(rowString: testString)
 
         let expectedArray = [
             "1999",
@@ -323,7 +323,7 @@ class CSwiftVTests: XCTestCase {
 
     func testPerformance() {
         let testString = nativeSwiftStringCSV
-        measureBlock {
+        measure {
             let _ = CSwiftV(string: testString)
         }
     }
