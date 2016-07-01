@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0730"
+   LastUpgradeVersion = "0800"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "6E8818101CE274A300912B26"
-               BuildableName = "CswiftVTVOS.framework"
+               BuildableName = "CSwiftV.framework"
                BlueprintName = "CswiftVTVOS"
                ReferencedContainer = "container:CSwiftV.xcodeproj">
             </BuildableReference>
@@ -43,7 +43,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "6E8818101CE274A300912B26"
-            BuildableName = "CswiftVTVOS.framework"
+            BuildableName = "CSwiftV.framework"
             BlueprintName = "CswiftVTVOS"
             ReferencedContainer = "container:CSwiftV.xcodeproj">
          </BuildableReference>
@@ -65,7 +65,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "6E8818101CE274A300912B26"
-            BuildableName = "CswiftVTVOS.framework"
+            BuildableName = "CSwiftV.framework"
             BlueprintName = "CswiftVTVOS"
             ReferencedContainer = "container:CSwiftV.xcodeproj">
          </BuildableReference>
@@ -83,7 +83,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "6E8818101CE274A300912B26"
-            BuildableName = "CswiftVTVOS.framework"
+            BuildableName = "CSwiftV.framework"
             BlueprintName = "CswiftVTVOS"
             ReferencedContainer = "container:CSwiftV.xcodeproj">
          </BuildableReference>
