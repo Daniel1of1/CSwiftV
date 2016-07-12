@@ -323,7 +323,7 @@ class CSwiftVTests: XCTestCase {
 
     func testPerformance() {
         let testString = nativeSwiftStringCSV
-        measureBlock {
+        measure {
             let _ = CSwiftV(string: testString)
         }
     }
