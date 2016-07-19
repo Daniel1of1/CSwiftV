@@ -46,12 +46,12 @@ public class CSwiftV {
     }
 
     public convenience init(string: String, headers: [String]?) {
-        self.init(string: string, headers:headers, separator:",")
+        self.init(string: string, separator:",", headers:headers)
     }
 
     internal static func cellsFromString(_ rowString: String, separator: String = ",") -> [String] {
         return CSwiftV.split(separator, string: rowString).map { element in
-            if let first = element.characters.first, let last = element.characters.last where first == "\"" && last == "\"" {
+            if let first = element.characters.first, let last = element.characters.last , first == "\"" && last == "\"" {
                 let range = element.characters.index(after: element.startIndex) ..< element.characters.index(before: element.endIndex)
                 return element[range]
             }
@@ -72,7 +72,7 @@ public class CSwiftV {
         let initial = string.components(separatedBy: separator)
         var merged = [String]()
         for newString in initial {
-            guard let record = merged.last where oddNumberOfQuotes(record) == true else {
+            guard let record = merged.last , oddNumberOfQuotes(record) == true else {
                 merged.append(newString)
                 continue
             }
