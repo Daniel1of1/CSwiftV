@@ -288,7 +288,7 @@ class CSwiftVTests: XCTestCase {
     func testThatItCanGetCells() {
         testString = singleString
 
-        let arrayUnderTest = CSwiftV.cells(row: testString)
+        let arrayUnderTest = CSwiftV.cells(forRow: testString)
 
         let expectedArray = [
             "1999",
