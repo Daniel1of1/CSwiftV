@@ -11,7 +11,7 @@ import class Foundation.NSCharacterSet
 extension String {
 
     var isEmptyOrWhitespace: Bool {
-        return characters.isEmpty ? true : trimmingCharacters(in: .whitespaces) == ""
+        return characters.isEmpty ? true : stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet()) == ""
     }
 
     var isNotEmptyOrWhitespace: Bool {
@@ -38,7 +38,7 @@ public class CSwiftV {
     /// - Parameter headers: The array of headers from the file. I f not included, it will be populated with the ones from the first line
     
     public init(with string: String, separator: String = ",", headers: [String]? = nil) {
-        var parsedLines = CSwiftV.records(from: string.replacingOccurrences(of: "\r\n", with: "\n")).map { CSwiftV.cells(forRow: $0, separator: separator) }
+        var parsedLines = CSwiftV.records(from: string.stringByReplacingOccurrencesOfString("\r\n", withString: "\n")).map { CSwiftV.cells(forRow: $0, separator: separator) }
         self.headers = headers ?? parsedLines.removeFirst()
         rows = parsedLines
         columnCount = self.headers.count
@@ -47,7 +47,7 @@ public class CSwiftV {
         keyedRows = rows.map { field -> [String: String] in
             var row = [String: String]()
             //only store value which are not empty
-            for (index, value) in field.enumerated() where value.isNotEmptyOrWhitespace {
+            for (index, value) in field.enumerate() where value.isNotEmptyOrWhitespace {
                 row[tempHeaders[index]] = value
             }
             return row
@@ -67,8 +67,8 @@ public class CSwiftV {
     /// - Parameter separator: The string that delimites the cells or fields inside the row. Defaults to ","
     internal static func cells( forRow string: String, separator: String = ",") -> [String] {
         return CSwiftV.split(separator, string: string).map { element in
-            if let first = element.characters.first, let last = element.characters.last , first == "\"" && last == "\"" {
-                let range = element.characters.index(after: element.startIndex) ..< element.characters.index(before: element.endIndex)
+            if let first = element.characters.first, let last = element.characters.last  where first == "\"" && last == "\"" {
+                let range = element.characters.indices.first!..<element.characters.indices.last!
                 return element[range]
             }
             return element
@@ -83,16 +83,16 @@ public class CSwiftV {
     }
 
     /// Tries to preserve the parity between open and close characters for different formats. Analizes the escape character count to do so
-    private static func split(_ separator: String, string: String) -> [String] {
+    private static func split(separator: String, string: String) -> [String] {
 
-        func oddNumberOfQuotes(_ string: String) -> Bool {
-            return string.components(separatedBy: "\"").count % 2 == 0
+        func oddNumberOfQuotes(string: String) -> Bool {
+            return string.componentsSeparatedByString("\"").count % 2 == 0
         }
 
-        let initial = string.components(separatedBy: separator)
+        let initial = string.componentsSeparatedByString(separator)
         var merged = [String]()
         for newString in initial {
-            guard let record = merged.last , oddNumberOfQuotes(record) == true else {
+            guard let record = merged.last  where oddNumberOfQuotes(record) == true else {
                 merged.append(newString)
                 continue
             }
