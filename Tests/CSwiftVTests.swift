@@ -62,8 +62,8 @@ class CSwiftVTests: XCTestCase {
             ["1999","Chevy","Venture","another description","4900.00"]
         ]
 
-        XCTAssertEqual(arrayUnderTest, expectedArray)
-        
+        XCTAssertEqual(arrayUnderTest[0], expectedArray[0])
+        XCTAssertEqual(arrayUnderTest[1], expectedArray[1])
     }
 
     func testThatItParsesLinesSeperatedByNewLinesNoCR() {
@@ -76,8 +76,8 @@ class CSwiftVTests: XCTestCase {
             ["1999","Chevy","Venture","another description","4900.00"]
         ]
 
-        XCTAssertEqual(arrayUnderTest, expectedArray)
-        
+        XCTAssertEqual(arrayUnderTest[0], expectedArray[0])
+        XCTAssertEqual(arrayUnderTest[1], expectedArray[1])
     }
 
     //2.  The last record in the file may or may not have an ending line
@@ -97,8 +97,8 @@ class CSwiftVTests: XCTestCase {
             ["1999","Chevy","Venture","another description","4900.00"]
         ]
         
-        XCTAssertEqual(arrayUnderTest, expectedArray)
-        
+        XCTAssertEqual(arrayUnderTest[0], expectedArray[0])
+        XCTAssertEqual(arrayUnderTest[1], expectedArray[1])
     }
     
     //3.  There maybe an optional header line appearing as the first line
@@ -144,8 +144,8 @@ class CSwiftVTests: XCTestCase {
             ["1999","Chevy","Venture","another description","4900.00"]
         ]
         
-        XCTAssertEqual(arrayUnderTest, expectedArray)
-        
+        XCTAssertEqual(arrayUnderTest[0], expectedArray[0])
+        XCTAssertEqual(arrayUnderTest[1], expectedArray[1])
     }
     
     
@@ -178,8 +178,8 @@ class CSwiftVTests: XCTestCase {
             ["1999","Chevy","Venture","another description","4900.00"]
         ]
         
-        XCTAssertEqual(arrayUnderTest, expectedArray)
-        
+        XCTAssertEqual(arrayUnderTest[0], expectedArray[0])
+        XCTAssertEqual(arrayUnderTest[1], expectedArray[1])
     }
     
 //    6.  Fields containing line breaks (CRLF), double quotes, and commas
@@ -200,8 +200,8 @@ class CSwiftVTests: XCTestCase {
             ["1999","Chevy","Venture","another, amazing, description","4900.00"]
         ]
         
-        XCTAssertEqual(arrayUnderTest, expectedArray)
-        
+        XCTAssertEqual(arrayUnderTest[0], expectedArray[0])
+        XCTAssertEqual(arrayUnderTest[1], expectedArray[1])
     }
     
     func testThatItParsesFieldswithNewLinesInQuotes() {
@@ -214,9 +214,9 @@ class CSwiftVTests: XCTestCase {
             ["1997","Ford","E350","descrition","3000.00"],
             ["1999","Chevy","Venture","another, \"\"amazing\"\",\n\ndescription\n","4900.00"]
         ]
-        
-        XCTAssertEqual(arrayUnderTest, expectedArray)
-        
+
+        XCTAssertEqual(arrayUnderTest[0], expectedArray[0])
+        XCTAssertEqual(arrayUnderTest[1], expectedArray[1])
     }
     
 //    7.  If double-quotes are used to enclose fields, then a double-quote
@@ -236,8 +236,8 @@ class CSwiftVTests: XCTestCase {
             ["1999","Chevy","Venture","another, \"\"amazing\"\", description","4900.00"]
         ]
         
-        XCTAssertEqual(arrayUnderTest, expectedArray)
-        
+        XCTAssertEqual(arrayUnderTest[0], expectedArray[0])
+        XCTAssertEqual(arrayUnderTest[1], expectedArray[1])
     }
     
     func testThatCanReturnKeyedRows() {
@@ -251,8 +251,8 @@ class CSwiftVTests: XCTestCase {
             ["Year":"1999","Make":"Chevy","Model":"Venture","Description":"another, \"\"amazing\"\", description","Price":"4900.00"]
         ]
         
-        XCTAssertEqual(arrayUnderTest, expectedArray)
-        
+        XCTAssertEqual(arrayUnderTest[0], expectedArray[0])
+        XCTAssertEqual(arrayUnderTest[1], expectedArray[1])
     }
     
     func testThatItCanParseArbitrarySeparators() {
@@ -266,8 +266,8 @@ class CSwiftVTests: XCTestCase {
             ["Year":"1999","Make":"Chevy","Model":"Venture","Description":"another\t \"\"amazing\"\"\t description","Price":"4900.00"]
         ]
         
-        XCTAssertEqual(arrayUnderTest, expectedArray)
-        
+        XCTAssertEqual(arrayUnderTest[0], expectedArray[0])
+        XCTAssertEqual(arrayUnderTest[1], expectedArray[1])
     }
 
     func testThatItCanGetCellsFromAstring() {
@@ -311,14 +311,16 @@ class CSwiftVTests: XCTestCase {
             ["1999","Chevy","Venture","another description",""]
         ]
         
-        XCTAssertEqual(csv.rows, expectedArray)
-        
+        XCTAssertEqual(csv.rows[0], expectedArray[0])
+        XCTAssertEqual(csv.rows[1], expectedArray[1])
+
         let expectedKeyedRows = [
             ["Year":"1997", "Make": "Ford", "Description":"descrition", "Price":"3000.00"],
             ["Year":"1999", "Make": "Chevy", "Model":"Venture", "Description":"another description"]
         ]
         
-        XCTAssertEqual(csv.keyedRows!, expectedKeyedRows)
+        XCTAssertEqual(csv.keyedRows![0], expectedKeyedRows[0])
+        XCTAssertEqual(csv.keyedRows![1], expectedKeyedRows[1])
     }
 
     func testPerformance() {
