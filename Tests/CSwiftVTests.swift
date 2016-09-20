@@ -21,6 +21,8 @@ public let newLineSeparationNoEnd = "Year,Make,Model,Description,Price\r\n1997,F
 
 public let withoutHeader = "1997,Ford,E350,descrition,3000.00\r\n1999,Chevy,Venture,another description,4900.00"
 
+public let longerColumns = "Year,Make,Model,Description,Price\r\n1997,Ford,E350,descrition,3000.00\r\n1999,Chevy,Venture,another description,4900.00,extra column\r\n"
+
 public let withRandomQuotes = "Year,Make,Model,Description,Price\r\n1997,Ford,\"E350\",descrition,3000.00\r\n1999,Chevy,Venture,\"another description\",4900.00"
 
 public let withCommasInQuotes = "Year,Make,Model,Description,Price\r\n1997,Ford,\"E350\",descrition,3000.00\r\n1999,Chevy,Venture,\"another, amazing, description\",4900.00"
@@ -123,7 +125,7 @@ class CSwiftVTests: XCTestCase {
         XCTAssertEqual(arrayUnderTest, expectedArray)
         
     }
-    
+
     // still 3. in RFC. This is the first decision we make in
     // api design with regards to headers. Currently if nothing
     // is passed in to the `headers` parameter (as is the case)
@@ -147,7 +149,30 @@ class CSwiftVTests: XCTestCase {
         XCTAssertEqual(arrayUnderTest[0], expectedArray[0])
         XCTAssertEqual(arrayUnderTest[1], expectedArray[1])
     }
-    
+
+    // Covers the case where a row is longer than the header row.
+    func testThatItParsesRowsLongerThanHeaders() {
+
+        testString = longerColumns
+        let csv = CSwiftV(with: testString)
+
+        let expectedArray = [
+            ["1997","Ford","E350","descrition","3000.00"],
+            ["1999","Chevy","Venture","another description","4900.00","extra column"]
+        ]
+
+        XCTAssertEqual(csv.rows[0], expectedArray[0])
+        XCTAssertEqual(csv.rows[1], expectedArray[1])
+
+        let expectedKeyedRows = [
+            ["Year":"1997", "Make": "Ford", "Model": "E350", "Description": "descrition", "Price":"3000.00"],
+            ["Year":"1999", "Make": "Chevy", "Model": "Venture", "Description":"another description", "Price":"4900.00"]
+        ]
+
+        XCTAssertEqual(csv.keyedRows![0], expectedKeyedRows[0])
+        XCTAssertEqual(csv.keyedRows![1], expectedKeyedRows[1])
+    }
+
     
 //    4.  Within the header and each record, there may be one or more
 //    fields, separated by commas.  Each line should contain the same
