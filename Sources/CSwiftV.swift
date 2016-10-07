@@ -39,7 +39,9 @@ public class CSwiftV {
             var row = [String: String]()
             //only store value which are not empty
             for (index, value) in field.enumerate() where value.isNotEmptyOrWhitespace {
-                row[tempHeaders[index]] = value
+                if index < tempHeaders.count {
+                    row[tempHeaders[index]] = value
+                }
             }
             return row
         }
