@@ -11,7 +11,7 @@ import class Foundation.NSCharacterSet
 extension String {
 
     var isEmptyOrWhitespace: Bool {
-        return characters.isEmpty ? true : trimmingCharacters(in: .whitespaces) == ""
+        return characters.isEmpty || trimmingCharacters(in: .whitespaces) == ""
     }
 
     var isNotEmptyOrWhitespace: Bool {
@@ -35,7 +35,7 @@ public class CSwiftV {
     /// Creates an instance containing the data extracted from the `with` String
     /// - Parameter with: The String obtained from reading the csv file.
     /// - Parameter separator: The separator used in the csv file, defaults to ","
-    /// - Parameter headers: The array of headers from the file. I f not included, it will be populated with the ones from the first line
+    /// - Parameter headers: The array of headers from the file. If not included, it will be populated with the ones from the first line
     
     public init(with string: String, separator: String = ",", headers: [String]? = nil) {
         var parsedLines = CSwiftV.records(from: string.replacingOccurrences(of: "\r\n", with: "\n")).map { CSwiftV.cells(forRow: $0, separator: separator) }
@@ -46,7 +46,7 @@ public class CSwiftV {
         let tempHeaders = self.headers
         keyedRows = rows.map { field -> [String: String] in
             var row = [String: String]()
-            //only store value which are not empty
+            // Only store value which are not empty
             for (index, value) in field.enumerated() where value.isNotEmptyOrWhitespace {
                 if index < tempHeaders.count {
                     row[tempHeaders[index]] = value
@@ -86,7 +86,6 @@ public class CSwiftV {
 
     /// Tries to preserve the parity between open and close characters for different formats. Analizes the escape character count to do so
     private static func split(_ separator: String, string: String) -> [String] {
-
         func oddNumberOfQuotes(_ string: String) -> Bool {
             return string.components(separatedBy: "\"").count % 2 == 0
         }
