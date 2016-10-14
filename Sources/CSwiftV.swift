@@ -11,7 +11,7 @@ import class Foundation.NSCharacterSet
 extension String {
 
     var isEmptyOrWhitespace: Bool {
-        return characters.isEmpty || trimmingCharacters(in: .whitespaces) == ""
+        return isEmpty || trimmingCharacters(in: .whitespaces) == ""
     }
 
     var isNotEmptyOrWhitespace: Bool {
