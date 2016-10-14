@@ -67,7 +67,7 @@ public class CSwiftV {
     /// Analizes a row and tries to obtain the different cells contained as an Array of String
     /// - Parameter forRow: The string corresponding to a row of the data matrix
     /// - Parameter separator: The string that delimites the cells or fields inside the row. Defaults to ","
-    internal static func cells( forRow string: String, separator: String = ",") -> [String] {
+    internal static func cells(forRow string: String, separator: String = ",") -> [String] {
         return CSwiftV.split(separator, string: string).map { element in
             if let first = element.characters.first, let last = element.characters.last , first == "\"" && last == "\"" {
                 let range = element.characters.index(after: element.startIndex) ..< element.characters.index(before: element.endIndex)
@@ -80,7 +80,7 @@ public class CSwiftV {
     /// Analizes the CSV data as an String, and separates the different rows as an individual String each.
     /// - Parameter forRow: The string corresponding the whole data
     /// - Attention: Assumes "/n" as row delimiter, needs to filter string for "/r/n" first
-    internal static func records( from string: String) -> [String] {
+    internal static func records(from string: String) -> [String] {
         return CSwiftV.split("\n", string: string).filter { $0.isNotEmptyOrWhitespace }
     }
 
