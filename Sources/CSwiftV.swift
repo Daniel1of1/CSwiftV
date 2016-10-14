@@ -79,7 +79,7 @@ public class CSwiftV {
 
     /// Analizes the CSV data as an String, and separates the different rows as an individual String each.
     /// - Parameter forRow: The string corresponding the whole data
-    /// - Attention: Assumes "/n" as row delimiter, needs to filter string for "/r/n" first
+    /// - Attention: Assumes "\n" as row delimiter, needs to filter string for "\r\n" first
     internal static func records(from string: String) -> [String] {
         return CSwiftV.split("\n", string: string).filter { $0.isNotEmptyOrWhitespace }
     }
