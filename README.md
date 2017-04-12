@@ -1,16 +1,15 @@
-CSwiftV
-=======
+# CSwiftV
 
 A csv parser conforming (and tested as much) to [rfc4180](http://tools.ietf.org/html/rfc4180#section-2) i.e the closest thing to a csv spec.
 
 It is currently all in memory so not suitable for very large files.
 
-###TL;DR
+### TL;DR
 
 ```swift
 let inputString = "Year,Make,Model,Description,Price\r\n1997,Ford,E350,descrition,3000.00\r\n1999,Chevy,Venture,another description,4900.00\r\n"
 
-let csv = CSwiftV(String: inputString)
+let csv = CSwiftV(with: inputString)
 
 let rows = csv.rows // [
                     //  ["1997","Ford","E350","descrition","3000.00"],
@@ -25,5 +24,3 @@ let keyedRows = csv.keyedRows // [
                               // ]
 
 ```
-
-
