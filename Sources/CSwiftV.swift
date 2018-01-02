@@ -69,8 +69,8 @@ public class CSwiftV {
     /// - Parameter separator: The string that delimites the cells or fields inside the row. Defaults to ","
     internal static func cells(forRow string: String, separator: String = ",") -> [String] {
         return CSwiftV.split(separator, string: string).map { element in
-            if let first = element.characters.first, let last = element.characters.last , first == "\"" && last == "\"" {
-                let range = element.characters.index(after: element.startIndex) ..< element.characters.index(before: element.endIndex)
+            if let first = element.first, let last = element.last , first == "\"" && last == "\"" {
+                let range = element.index(after: element.startIndex) ..< element.index(before: element.endIndex)
                 return String(element[range])
             }
             return element
