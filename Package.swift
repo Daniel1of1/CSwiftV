@@ -6,7 +6,8 @@ let package = Package(
     targets: [
       .target(
           name: "CSwiftV",
-          dependencies: []
+          dependencies: [],
+          path: "Sources"
       )
     ]
 )
