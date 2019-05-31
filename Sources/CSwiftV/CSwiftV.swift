@@ -29,14 +29,13 @@ public class CSwiftV {
     public let headers: [String]
     /// An array of Dictionaries with the values of each row keyed to the header
     public let keyedRows: [[String: String]]?
-    // An Array of the rows in an Array of String form, equivalent to keyedRows, but without the keys
+    /// An Array of the rows in an Array of String form, equivalent to keyedRows, but without the keys
     public let rows: [[String]]
     
     /// Creates an instance containing the data extracted from the `with` String
     /// - Parameter with: The String obtained from reading the csv file.
     /// - Parameter separator: The separator used in the csv file, defaults to ","
     /// - Parameter headers: The array of headers from the file. If not included, it will be populated with the ones from the first line
-    
     public init(with string: String, separator: String = ",", headers: [String]? = nil) {
         var parsedLines = CSwiftV.records(from: string.replacingOccurrences(of: "\r\n", with: "\n")).map { CSwiftV.cells(forRow: $0, separator: separator) }
         self.headers = headers ?? parsedLines.removeFirst()
@@ -103,5 +102,4 @@ public class CSwiftV {
         }
         return merged
     }
-
 }
