@@ -199,8 +199,8 @@ class CSwiftVTests: XCTestCase {
         let arrayUnderTest =  CSwiftV(with: testString).rows
         
         let expectedArray = [
-            ["1997","Ford","E350","descrition","3000.00"],
-            ["1999","Chevy","Venture","another description","4900.00"]
+            ["1997","Ford","\"E350\"","descrition","3000.00"],
+            ["1999","Chevy","Venture","\"another description\"","4900.00"]
         ]
         
         XCTAssertEqual(arrayUnderTest[0], expectedArray[0])
@@ -221,8 +221,8 @@ class CSwiftVTests: XCTestCase {
         let arrayUnderTest =  CSwiftV(with: testString).rows
         
         let expectedArray = [
-            ["1997","Ford","E350","descrition","3000.00"],
-            ["1999","Chevy","Venture","another, amazing, description","4900.00"]
+            ["1997","Ford","\"E350\"","descrition","3000.00"],
+            ["1999","Chevy","Venture","\"another, amazing, description\"","4900.00"]
         ]
         
         XCTAssertEqual(arrayUnderTest[0], expectedArray[0])
@@ -236,8 +236,8 @@ class CSwiftVTests: XCTestCase {
         let arrayUnderTest =  CSwiftV(with: testString).rows
         
         let expectedArray = [
-            ["1997","Ford","E350","descrition","3000.00"],
-            ["1999","Chevy","Venture","another, \"\"amazing\"\",\n\ndescription\n","4900.00"]
+            ["1997","Ford","\"E350\"","descrition","3000.00"],
+            ["1999","Chevy","Venture","\"another, \"\"amazing\"\",\n\ndescription\n\"","4900.00"]
         ]
 
         XCTAssertEqual(arrayUnderTest[0], expectedArray[0])
@@ -257,8 +257,8 @@ class CSwiftVTests: XCTestCase {
         let arrayUnderTest =  CSwiftV(with: testString).rows
         
         let expectedArray = [
-            ["1997","Ford","E350","descrition","3000.00"],
-            ["1999","Chevy","Venture","another, \"\"amazing\"\", description","4900.00"]
+            ["1997","Ford","\"E350\"","descrition","3000.00"],
+            ["1999","Chevy","Venture","\"another, \"\"amazing\"\", description\"","4900.00"]
         ]
         
         XCTAssertEqual(arrayUnderTest[0], expectedArray[0])
@@ -272,8 +272,8 @@ class CSwiftVTests: XCTestCase {
         let arrayUnderTest =  CSwiftV(with: testString).keyedRows!
         
         let expectedArray = [
-            ["Year":"1997","Make":"Ford","Model":"E350","Description":"descrition","Price":"3000.00"],
-            ["Year":"1999","Make":"Chevy","Model":"Venture","Description":"another, \"\"amazing\"\", description","Price":"4900.00"]
+            ["Year":"1997","Make":"Ford","Model":"\"E350\"","Description":"descrition","Price":"3000.00"],
+            ["Year":"1999","Make":"Chevy","Model":"Venture","Description":"\"another, \"\"amazing\"\", description\"","Price":"4900.00"]
         ]
         
         XCTAssertEqual(arrayUnderTest[0], expectedArray[0])
@@ -287,8 +287,8 @@ class CSwiftVTests: XCTestCase {
         let arrayUnderTest =  CSwiftV(with: testString, separator:"\t").keyedRows!
         
         let expectedArray = [
-            ["Year":"1997","Make":"Ford","Model":"E350","Description":"descrition","Price":"3000.00"],
-            ["Year":"1999","Make":"Chevy","Model":"Venture","Description":"another\t \"\"amazing\"\"\t description","Price":"4900.00"]
+            ["Year":"1997","Make":"Ford","Model":"\"E350\"","Description":"descrition","Price":"3000.00"],
+            ["Year":"1999","Make":"Chevy","Model":"Venture","Description":"\"another\t \"\"amazing\"\"\t description\"","Price":"4900.00"]
         ]
         
         XCTAssertEqual(arrayUnderTest[0], expectedArray[0])
@@ -319,7 +319,7 @@ class CSwiftVTests: XCTestCase {
             "1999",
             "Chevy",
             "Venture",
-            "another, \"\"amazing\"\",\n\ndescription\n",
+            "\"another, \"\"amazing\"\",\n\ndescription\n\"",
             "4900.00"
         ]
 
