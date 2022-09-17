@@ -11,27 +11,27 @@ import XCTest
 
 @testable import CSwiftV
 
-public let emptyColumns = "Year,Make,Model,Description,Price\r\n1997,Ford,,descrition,3000.00\r\n1999,Chevy,Venture,another description,\r\n"
+public let emptyColumns = "Year,Make,Model,Description,Price\r\n1997,Ford,,description,3000.00\r\n1999,Chevy,Venture,another description,\r\n"
 
-public let newLineSeparation = "Year,Make,Model,Description,Price\r\n1997,Ford,E350,descrition,3000.00\r\n1999,Chevy,Venture,another description,4900.00\r\n"
+public let newLineSeparation = "Year,Make,Model,Description,Price\r\n1997,Ford,E350,description,3000.00\r\n1999,Chevy,Venture,another description,4900.00\r\n"
 
-public let newLineSeparationNoCR = "Year,Make,Model,Description,Price\n1997,Ford,E350,descrition,3000.00\n1999,Chevy,Venture,another description,4900.00\n"
+public let newLineSeparationNoCR = "Year,Make,Model,Description,Price\n1997,Ford,E350,description,3000.00\n1999,Chevy,Venture,another description,4900.00\n"
 
-public let newLineSeparationNoEnd = "Year,Make,Model,Description,Price\r\n1997,Ford,E350,descrition,3000.00\r\n1999,Chevy,Venture,another description,4900.00"
+public let newLineSeparationNoEnd = "Year,Make,Model,Description,Price\r\n1997,Ford,E350,description,3000.00\r\n1999,Chevy,Venture,another description,4900.00"
 
-public let withoutHeader = "1997,Ford,E350,descrition,3000.00\r\n1999,Chevy,Venture,another description,4900.00"
+public let withoutHeader = "1997,Ford,E350,description,3000.00\r\n1999,Chevy,Venture,another description,4900.00"
 
-public let longerColumns = "Year,Make,Model,Description,Price\r\n1997,Ford,E350,descrition,3000.00\r\n1999,Chevy,Venture,another description,4900.00,extra column\r\n"
+public let longerColumns = "Year,Make,Model,Description,Price\r\n1997,Ford,E350,description,3000.00\r\n1999,Chevy,Venture,another description,4900.00,extra column\r\n"
 
-public let withRandomQuotes = "Year,Make,Model,Description,Price\r\n1997,Ford,\"E350\",descrition,3000.00\r\n1999,Chevy,Venture,\"another description\",4900.00"
+public let withRandomQuotes = "Year,Make,Model,Description,Price\r\n1997,Ford,\"E350\",description,3000.00\r\n1999,Chevy,Venture,\"another description\",4900.00"
 
-public let withCommasInQuotes = "Year,Make,Model,Description,Price\r\n1997,Ford,\"E350\",descrition,3000.00\r\n1999,Chevy,Venture,\"another, amazing, description\",4900.00"
+public let withCommasInQuotes = "Year,Make,Model,Description,Price\r\n1997,Ford,\"E350\",description,3000.00\r\n1999,Chevy,Venture,\"another, amazing, description\",4900.00"
 
-public let withQuotesInQuotes = "Year,Make,Model,Description,Price\r\n1997,Ford,\"E350\",descrition,3000.00\r\n1999,Chevy,Venture,\"another, \"\"amazing\"\", description\",4900.00"
+public let withQuotesInQuotes = "Year,Make,Model,Description,Price\r\n1997,Ford,\"E350\",description,3000.00\r\n1999,Chevy,Venture,\"another, \"\"amazing\"\", description\",4900.00"
 
-public let withNewLinesInQuotes = "Year,Make,Model,Description,Price\n1997,Ford,\"E350\",descrition,3000.00\n1999,Chevy,Venture,\"another, \"\"amazing\"\",\n\ndescription\n\",4900.00\n"
+public let withNewLinesInQuotes = "Year,Make,Model,Description,Price\n1997,Ford,\"E350\",description,3000.00\n1999,Chevy,Venture,\"another, \"\"amazing\"\",\n\ndescription\n\",4900.00\n"
 
-public let withTabSeparator = "Year\tMake\tModel\tDescription\tPrice\r\n1997\tFord\t\"E350\"\tdescrition\t3000.00\r\n1999\tChevy\tVenture\t\"another\t \"\"amazing\"\"\t description\"\t4900.00\r\n"
+public let withTabSeparator = "Year\tMake\tModel\tDescription\tPrice\r\n1997\tFord\t\"E350\"\tdescription\t3000.00\r\n1999\tChevy\tVenture\t\"another\t \"\"amazing\"\"\t description\"\t4900.00\r\n"
 
 public let singleString = "1999,Chevy,Venture,\"another, \"\"amazing\"\",\n\ndescription\n\",4900.00"
 
@@ -60,7 +60,7 @@ class CSwiftVTests: XCTestCase {
         let arrayUnderTest =  CSwiftV(with: testString).rows
 
         let expectedArray = [
-            ["1997","Ford","E350","descrition","3000.00"],
+            ["1997","Ford","E350","description","3000.00"],
             ["1999","Chevy","Venture","another description","4900.00"]
         ]
 
@@ -74,7 +74,7 @@ class CSwiftVTests: XCTestCase {
         let arrayUnderTest =  CSwiftV(with: testString).rows
 
         let expectedArray = [
-            ["1997","Ford","E350","descrition","3000.00"],
+            ["1997","Ford","E350","description","3000.00"],
             ["1999","Chevy","Venture","another description","4900.00"]
         ]
 
@@ -95,7 +95,7 @@ class CSwiftVTests: XCTestCase {
         let arrayUnderTest =  CSwiftV(with: testString).rows
         
         let expectedArray = [
-            ["1997","Ford","E350","descrition","3000.00"],
+            ["1997","Ford","E350","description","3000.00"],
             ["1999","Chevy","Venture","another description","4900.00"]
         ]
         
@@ -142,7 +142,7 @@ class CSwiftVTests: XCTestCase {
         //XCTAssertNil(arrayUnderTest)
         
         let expectedArray = [
-            ["1997","Ford","E350","descrition","3000.00"],
+            ["1997","Ford","E350","description","3000.00"],
             ["1999","Chevy","Venture","another description","4900.00"]
         ]
         
@@ -157,7 +157,7 @@ class CSwiftVTests: XCTestCase {
         let csv = CSwiftV(with: testString)
 
         let expectedArray = [
-            ["1997","Ford","E350","descrition","3000.00"],
+            ["1997","Ford","E350","description","3000.00"],
             ["1999","Chevy","Venture","another description","4900.00","extra column"]
         ]
 
@@ -165,7 +165,7 @@ class CSwiftVTests: XCTestCase {
         XCTAssertEqual(csv.rows[1], expectedArray[1])
 
         let expectedKeyedRows = [
-            ["Year":"1997", "Make": "Ford", "Model": "E350", "Description": "descrition", "Price":"3000.00"],
+            ["Year":"1997", "Make": "Ford", "Model": "E350", "Description": "description", "Price":"3000.00"],
             ["Year":"1999", "Make": "Chevy", "Model": "Venture", "Description":"another description", "Price":"4900.00"]
         ]
 
@@ -199,7 +199,7 @@ class CSwiftVTests: XCTestCase {
         let arrayUnderTest =  CSwiftV(with: testString).rows
         
         let expectedArray = [
-            ["1997","Ford","\"E350\"","descrition","3000.00"],
+            ["1997","Ford","\"E350\"","description","3000.00"],
             ["1999","Chevy","Venture","\"another description\"","4900.00"]
         ]
         
@@ -221,7 +221,7 @@ class CSwiftVTests: XCTestCase {
         let arrayUnderTest =  CSwiftV(with: testString).rows
         
         let expectedArray = [
-            ["1997","Ford","\"E350\"","descrition","3000.00"],
+            ["1997","Ford","\"E350\"","description","3000.00"],
             ["1999","Chevy","Venture","\"another, amazing, description\"","4900.00"]
         ]
         
@@ -236,7 +236,7 @@ class CSwiftVTests: XCTestCase {
         let arrayUnderTest =  CSwiftV(with: testString).rows
         
         let expectedArray = [
-            ["1997","Ford","\"E350\"","descrition","3000.00"],
+            ["1997","Ford","\"E350\"","description","3000.00"],
             ["1999","Chevy","Venture","\"another, \"\"amazing\"\",\n\ndescription\n\"","4900.00"]
         ]
 
@@ -257,7 +257,7 @@ class CSwiftVTests: XCTestCase {
         let arrayUnderTest =  CSwiftV(with: testString).rows
         
         let expectedArray = [
-            ["1997","Ford","\"E350\"","descrition","3000.00"],
+            ["1997","Ford","\"E350\"","description","3000.00"],
             ["1999","Chevy","Venture","\"another, \"\"amazing\"\", description\"","4900.00"]
         ]
         
@@ -272,7 +272,7 @@ class CSwiftVTests: XCTestCase {
         let arrayUnderTest =  CSwiftV(with: testString).keyedRows!
         
         let expectedArray = [
-            ["Year":"1997","Make":"Ford","Model":"\"E350\"","Description":"descrition","Price":"3000.00"],
+            ["Year":"1997","Make":"Ford","Model":"\"E350\"","Description":"description","Price":"3000.00"],
             ["Year":"1999","Make":"Chevy","Model":"Venture","Description":"\"another, \"\"amazing\"\", description\"","Price":"4900.00"]
         ]
         
@@ -287,7 +287,7 @@ class CSwiftVTests: XCTestCase {
         let arrayUnderTest =  CSwiftV(with: testString, separator:"\t").keyedRows!
         
         let expectedArray = [
-            ["Year":"1997","Make":"Ford","Model":"\"E350\"","Description":"descrition","Price":"3000.00"],
+            ["Year":"1997","Make":"Ford","Model":"\"E350\"","Description":"description","Price":"3000.00"],
             ["Year":"1999","Make":"Chevy","Model":"Venture","Description":"\"another\t \"\"amazing\"\"\t description\"","Price":"4900.00"]
         ]
         
@@ -302,7 +302,7 @@ class CSwiftVTests: XCTestCase {
 
         let expectedArray = [
             "Year,Make,Model,Description,Price",
-            "1997,Ford,\"E350\",descrition,3000.00",
+            "1997,Ford,\"E350\",description,3000.00",
             "1999,Chevy,Venture,\"another, \"\"amazing\"\",\n\ndescription\n\",4900.00"
         ]
 
@@ -332,7 +332,7 @@ class CSwiftVTests: XCTestCase {
         let csv = CSwiftV(with: testString)
         
         let expectedArray = [
-            ["1997","Ford","","descrition","3000.00"],
+            ["1997","Ford","","description","3000.00"],
             ["1999","Chevy","Venture","another description",""]
         ]
         
@@ -340,7 +340,7 @@ class CSwiftVTests: XCTestCase {
         XCTAssertEqual(csv.rows[1], expectedArray[1])
 
         let expectedKeyedRows = [
-            ["Year":"1997", "Make": "Ford", "Description":"descrition", "Price":"3000.00"],
+            ["Year":"1997", "Make": "Ford", "Description":"description", "Price":"3000.00"],
             ["Year":"1999", "Make": "Chevy", "Model":"Venture", "Description":"another description"]
         ]
         
